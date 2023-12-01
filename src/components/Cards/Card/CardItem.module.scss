@@ -1,0 +1,19 @@
+.card {
+  background-color: #1d1c34;
+  background: linear-gradient(
+    180deg,
+    rgba(72, 49, 157, 0.2) 18.75%,
+    rgba(72, 49, 157, 0) 100%
+  );
+  border: 1px solid rgba(72, 49, 157, 0.2);
+  border-bottom: none;
+  color: '#fff';
+  .info {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-left: 16px;
+    border-radius: 0px 0px 16px 16px;
+  }
+}
