@@ -1,0 +1,22 @@
+.input-search {
+  width: 442px;
+  height: 40px;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: #2b2f53;
+  background: linear-gradient(135deg, rgba(15, 85, 232, 0.1) 0%, rgba(157, 223, 243, 0.1) 100%);
+}
+
+.input-search::-moz-placeholder {
+  color: #fff;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.input-search::placeholder {
+  color: #fff;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+}/*# sourceMappingURL=SearchBar.module.css.map */
