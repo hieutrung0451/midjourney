@@ -10,7 +10,7 @@ function Profile() {
   const [size, setSize] = useState<SizeType>('large');
 
   return (
-    <Space size={[28, 16]} wrap>
+    <Space size={[20, 16]} wrap>
       <Button
         type='text'
         icon={<HiOutlineVideoCamera color='#999999' size='24px' />}

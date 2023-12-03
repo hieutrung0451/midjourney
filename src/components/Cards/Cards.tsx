@@ -8,7 +8,8 @@ interface Card {
   channel_name: string;
   image: string;
   channel_avatar: string;
-  date: string;
+  dateNow: string;
+  createAt: string;
   view: string;
   videoTime: string;
 }
@@ -37,10 +38,12 @@ const Cards = ({ cards, search }: Props): React.JSX.Element => {
         <Col span={8}>
           <Card
             key={card.id}
+            id={card.id}
             title={card.title}
             channel_name={card.channel_name}
             channel_avatar={card.channel_avatar}
-            date={card.date}
+            createAt={card.createAt}
+            dateNow={card.dateNow}
             view={card.view}
             image={card.image}
             videoTime={card.videoTime}

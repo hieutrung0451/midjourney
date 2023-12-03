@@ -9,6 +9,16 @@
   border-bottom: none;
   color: '#fff';
 
+  .videoTime {
+    position: absolute;
+    top: 41px;
+    color: white;
+    top: 144px;
+    right: 9px;
+    background: #000;
+    padding: 1px 6px;
+  }
+
   .info {
     color: rgba(255, 255, 255, 0.6);
     display: flex;
@@ -25,4 +35,12 @@
       font-size: 13px;
     }
   }
+}
+
+.card:hover {
+  width: 360px;
+  height: 400px;
+  position: absolute;
+  z-index: 1;
+  background-color: #4c489c;
 }

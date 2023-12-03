@@ -16,7 +16,8 @@ interface Card {
   channel_name: string;
   image: string;
   channel_avatar: string;
-  date: string;
+  dateNow: string;
+  createAt: string;
   view: string;
   videoTime: string;
 }

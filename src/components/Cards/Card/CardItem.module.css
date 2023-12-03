@@ -5,6 +5,15 @@
   border-bottom: none;
   color: "#fff";
 }
+.card .videoTime {
+  position: absolute;
+  top: 41px;
+  color: white;
+  top: 144px;
+  right: 9px;
+  background: #000;
+  padding: 1px 6px;
+}
 .card .info {
   color: rgba(255, 255, 255, 0.6);
   display: flex;
@@ -18,4 +27,12 @@
 }
 .card .info .userInfo {
   font-size: 13px;
+}
+
+.card:hover {
+  width: 360px;
+  height: 400px;
+  position: absolute;
+  z-index: 1;
+  background-color: #4c489c;
 }/*# sourceMappingURL=CardItem.module.css.map */

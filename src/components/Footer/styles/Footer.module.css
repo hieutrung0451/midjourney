@@ -1,3 +1,7 @@
 .footer {
   background-color: #1d1c34;
+}
+.footer a {
+  color: white;
+  text-decoration-line: underline;
 }/*# sourceMappingURL=Footer.module.css.map */

@@ -14,7 +14,7 @@ import {
   MdMusicVideo,
 } from 'react-icons/md';
 
-import logo from '../../assets/Papaya.svg';
+import logo from '../../assets/Papaya.svg';  
 
 import styles from './styles/Sider.module.css';
 

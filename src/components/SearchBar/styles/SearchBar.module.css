@@ -1,3 +1,7 @@
+.container {
+  position: relative;
+}
+
 .input-search {
   width: 442px;
   height: 40px;
@@ -19,4 +23,13 @@
   font-size: 13px;
   font-style: normal;
   font-weight: 400;
+}
+
+.mic {
+  position: absolute;
+  right: 8px;
+  top: 16px;
+  background-color: none;
+  background: none;
+  color: rgba(255, 255, 255, 0.6);
 }/*# sourceMappingURL=SearchBar.module.css.map */
