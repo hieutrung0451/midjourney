@@ -21,28 +21,28 @@ function Navbar() {
         Thoughts
       </Menu.Item>
       <Menu.Item key='4' className={styles['nav-item']}>
-        Navigation One
-      </Menu.Item>
-      <Menu.Item key='5' className={styles['nav-item']}>
         Music
       </Menu.Item>
-      <Menu.Item key='6' className={styles['nav-item']}>
+      <Menu.Item key='5' className={styles['nav-item']}>
         Thrillers
       </Menu.Item>
-      <Menu.Item key='7' className={styles['nav-item']}>
+      <Menu.Item key='6' className={styles['nav-item']}>
         Mixes
       </Menu.Item>
-      <Menu.Item key='8' className={styles['nav-item']}>
+      <Menu.Item key='7' className={styles['nav-item']}>
         Avatar
       </Menu.Item>
-      <Menu.Item key='9' className={styles['nav-item']}>
+      <Menu.Item key='8' className={styles['nav-item']}>
         Film criticisma
       </Menu.Item>
-      <Menu.Item key='10' className={styles['nav-item']}>
+      <Menu.Item key='9' className={styles['nav-item']}>
         Korean dramas
       </Menu.Item>
-      <Menu.Item key='11' className={styles['nav-item']}>
+      <Menu.Item key='10' className={styles['nav-item']}>
         Characters
+      </Menu.Item>
+      <Menu.Item key='11' className={styles['nav-item']}>
+        Eating
       </Menu.Item>
     </Menu>
   );

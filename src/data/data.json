@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "React - The full course",
+    "channel_name": "Fireship",
+    "image": "https://fireship.io/courses/react/img/featured.png",
+    "channel_avatar": "https://yt3.googleusercontent.com/3MC9XX7rtxeS55uoOQG2nvJ7zaBd17r8Uh0yk_R3KyKjAK_u4RlHhZcTCkx4yym0guGWdefD5Q=s176-c-k-c0x00ffffff-no-rj-mo",
+    "date": "1 month",
+    "view": "14k",
+    "videoTime": "4:30"
+  },
+  {
+    "id": 2,
+    "title": "React Supabase Full Course",
+    "channel_name": "Fireship",
+    "image": "https://fireship.io/courses/supabase/img/featured.webp",
+    "channel_avatar": "https://yt3.googleusercontent.com/3MC9XX7rtxeS55uoOQG2nvJ7zaBd17r8Uh0yk_R3KyKjAK_u4RlHhZcTCkx4yym0guGWdefD5Q=s176-c-k-c0x00ffffff-no-rj-mo",
+    "date": "1 month",
+    "view": "14k",
+    "videoTime": "4:30"
+  },
+  {
+    "id": 3,
+    "title": "Next.js Full Course",
+    "channel_name": "Fireship",
+    "image": "https://fireship.io/courses/nextjs/img/featured.png",
+    "channel_avatar": "https://yt3.googleusercontent.com/3MC9XX7rtxeS55uoOQG2nvJ7zaBd17r8Uh0yk_R3KyKjAK_u4RlHhZcTCkx4yym0guGWdefD5Q=s176-c-k-c0x00ffffff-no-rj-mo",
+    "date": "1 month",
+    "view": "14k",
+    "videoTime": "4:30"
+  },
+  {
+    "id": 4,
+    "title": "Modern JavaScript Full Course",
+    "channel_name": "Fireship",
+    "image": "https://fireship.io/courses/js/img/featured.webp",
+    "channel_avatar": "https://yt3.googleusercontent.com/3MC9XX7rtxeS55uoOQG2nvJ7zaBd17r8Uh0yk_R3KyKjAK_u4RlHhZcTCkx4yym0guGWdefD5Q=s176-c-k-c0x00ffffff-no-rj-mo",
+    "date": "1 month",
+    "view": "14k",
+    "videoTime": "4:30"
+  },
+  {
+    "id": 5,
+    "title": "SvelteKit Full Course",
+    "channel_name": "Fireship",
+    "image": "https://fireship.io/courses/sveltekit/img/featured.webp",
+    "channel_avatar": "https://yt3.googleusercontent.com/3MC9XX7rtxeS55uoOQG2nvJ7zaBd17r8Uh0yk_R3KyKjAK_u4RlHhZcTCkx4yym0guGWdefD5Q=s176-c-k-c0x00ffffff-no-rj-mo",
+    "date": "1 month",
+    "view": "14k",
+    "videoTime": "4:30"
+  },
+  {
+    "id": 6,
+    "title": "Git & GitHub Full Course",
+    "channel_name": "Fireship",
+    "image": "https://fireship.io/courses/git/img/featured.webp",
+    "channel_avatar": "https://yt3.googleusercontent.com/3MC9XX7rtxeS55uoOQG2nvJ7zaBd17r8Uh0yk_R3KyKjAK_u4RlHhZcTCkx4yym0guGWdefD5Q=s176-c-k-c0x00ffffff-no-rj-mo",
+    "date": "1 month",
+    "view": "14k",
+    "videoTime": "4:30"
+  }
+]

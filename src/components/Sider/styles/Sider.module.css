@@ -1,3 +1,8 @@
-.sider {
-  background: #2e335a;
+.sider img {
+  margin-top: 48px;
+  padding: 15px 84px 14px 24px;
+}
+
+.menu {
+  background: #1c1b33;
 }/*# sourceMappingURL=Sider.module.css.map */

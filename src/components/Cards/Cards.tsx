@@ -1,31 +1,54 @@
-import React from 'react';
-import { Row, Col, Space } from 'antd';
+import { Row, Col } from 'antd';
 
 import Card from './Card/CardItem';
 
-function Cards() {
+interface Card {
+  id: number;
+  title: string;
+  channel_name: string;
+  image: string;
+  channel_avatar: string;
+  date: string;
+  view: string;
+  videoTime: string;
+}
+
+interface Props {
+  cards: Card[];
+  search: string;
+}
+
+const Cards = ({ cards, search }: Props): React.JSX.Element => {
+  const bySearch = (card: Card, search: string) => {
+    if (search !== '') {
+      return card.title.toLowerCase().includes(search.toLowerCase());
+    } else return card;
+  };
+
+  const filteredList = (cards: Card[], search: string) => {
+    const filtered = cards.filter((card) => bySearch(card, search));
+
+    return filtered;
+  };
+
   return (
     <Row gutter={[16, 16]} style={{ marginRight: '0px', padding: '40px' }}>
-      <Col span={8}>
-        <Card />
-      </Col>
-      <Col span={8}>
-        <Card />
-      </Col>
-      <Col span={8}>
-        <Card />
-      </Col>
-      <Col span={8}>
-        <Card />
-      </Col>
-      <Col span={8}>
-        <Card />
-      </Col>
-      <Col span={8}>
-        <Card />
-      </Col>
+      {filteredList(cards, search).map((card) => (
+        <Col span={8}>
+          <Card
+            key={card.id}
+            title={card.title}
+            channel_name={card.channel_name}
+            channel_avatar={card.channel_avatar}
+            date={card.date}
+            view={card.view}
+            image={card.image}
+            videoTime={card.videoTime}
+          />
+        </Col>
+      ))}
     </Row>
   );
-}
+};
 
 export default Cards;

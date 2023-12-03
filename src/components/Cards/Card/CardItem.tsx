@@ -6,25 +6,44 @@ import styles from './CardItem.module.css';
 import image1 from '../../../assets/img/Rectangle 394.png';
 import logo from '../../../assets/img/logo1.jpg';
 
-function CardItem() {
+interface Props {
+  title: string;
+  channel_name: string;
+  image: string;
+  channel_avatar: string;
+  date: string;
+  view: string;
+  videoTime: string;
+}
+
+function CardItem({
+  title,
+  channel_name,
+  image,
+  channel_avatar,
+  date,
+  view,
+  videoTime,
+}: Props): React.JSX.Element {
   return (
     <Card
-      cover={<img src={image1} alt='this is a cover' />}
+      cover={<img src={image} alt='this is a cover' />}
       className={styles.card}
       bordered={false}
     >
-      <Flex justify='space-between'>
+      <Flex>
         <Avatar
-          src={<img src={logo} alt='avatar' />}
-          style={{ width: '60px' }}
+          src={<img src={channel_avatar} alt='avatar' />}
+          style={{ width: '16%', height: '38px' }}
         />
         <div className={styles.info}>
-          <h4>Design and Prototype an App with Play - Full 3-hour Course</h4>
-          <div>DESIGNCODE</div>
-          <div>
-            <span>14k views</span>
+          <h4>{title}</h4>
+
+          <div className={styles.userInfo}>
+            <div>{channel_name}</div>
+            <span>{view}</span>
             <span> - </span>
-            <span>1 month age</span>
+            <span>{date}</span>
           </div>
         </div>
       </Flex>
