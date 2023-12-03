@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Layout, Space } from 'antd';
+import { Layout } from 'antd';
 
 import DATA from '../../data/data.json';
 

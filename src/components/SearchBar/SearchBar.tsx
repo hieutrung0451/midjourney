@@ -1,20 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { Input, Space } from 'antd';
-
-import data from '../../data/data.json';
+import { Input } from 'antd';
 
 import styles from './styles/SearchBar.module.css';
-
-interface Card {
-  id: number;
-  title: string;
-  channel_name: string;
-  image: string;
-  channel_avatar: string;
-  date: string;
-  view: string;
-  videoTime: string;
-}
 
 interface Props {
   onSearch: (filtered: string) => void;
