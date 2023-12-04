@@ -38,8 +38,14 @@ function getItem(
 }
 
 const items: MenuProps['items'] = [
-  getItem('Home', 'home', [<IoHome />, <Link to='/' />]),
-  getItem('Shorts', 'shorts', [<CiYoutube />, <Link to='./shorts' />]),
+  getItem('Home', 'home', [
+    <IoHome style={{ marginRight: '10px' }}                 />,
+    <Link to='/' />,
+  ]),
+  getItem('Shorts', 'shorts', [
+    <CiYoutube style={{ marginRight: '10px' }} />,
+    <Link to='./shorts' />,
+  ]),
   getItem('Subscriptions', 'subscriptions', <MdOutlineSubscriptions />),
   getItem('Papaya Music', 'music', <MdMusicVideo />),
   getItem(

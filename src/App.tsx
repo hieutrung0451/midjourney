@@ -40,8 +40,8 @@ const App = (): React.JSX.Element => {
         <Header onSearch={setSearch} />
         <Routes>
           <Route path='/' element={<Home cards={cards} search={search} />} />
-          <Route path='/detail/:id' element={<Detail />} />
-          <Route path='/shorts' element={<Shorts cards={cards}/>} />
+          <Route path='/detail/:id' element={<Detail cards={cards} />} />
+          <Route path='/shorts' element={<Shorts cards={cards} />} />
         </Routes>
         <Footer />
       </Layout>

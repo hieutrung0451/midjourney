@@ -41,10 +41,10 @@ const Shorts = ({ cards }: Props): React.JSX.Element => {
                 <Avatar size='large' icon={<UserOutlined />} />
               </Col>
               <Col>
-                <h2>Lofi</h2>
+                <h2>Lofi Girl</h2>
                 <div style={{ color: '#ccc' }}>
-                  <p>@lofi</p>
-                  <p>199k Subscriptions</p>
+                  <p>@lofigirl</p>
+                  <p>200k Subscriptions</p>
                 </div>
               </Col>
             </Row>
@@ -67,9 +67,10 @@ const Shorts = ({ cards }: Props): React.JSX.Element => {
         <Row>
           <Col>
             <Row>
-              {cards.map((card) => (
+              {cards.slice(0, 5).map((card) => (
                 <ChannelVideo
                   id={card.id}
+                  key={card.id}
                   title={card.title}
                   channel_name={card.channel_name}
                   view={card.view}

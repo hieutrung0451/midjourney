@@ -1,4 +1,58 @@
 .content {
   background: #1d1c34;
   box-shadow: -10px 30px 80px 0px rgba(59, 38, 123, 0.7);
+}
+.content img {
+  width: 728px;
+}
+.content h2 {
+  margin: 18px 0 8px 0;
+}
+.content .info {
+  color: #ccc;
+  margin-left: 18px;
+}
+.content .btn {
+  margin-left: 12px;
+  padding: 0 44px;
+  border-radius: 32px;
+}
+.content .desc {
+  width: 100%;
+  margin-top: 24px;
+  color: #ccc;
+}
+.content .desc .between {
+  margin: 0 8px;
+}
+.content .detail {
+  color: #ccc;
+}
+
+.user {
+  position: relative;
+  top: -60px;
+}
+
+.cardItem {
+  display: flex;
+  width: 100%;
+  height: 110px;
+  margin: 8px 12px 12px;
+  background-color: #1d1c34;
+  border: 2px solid rgba(72, 49, 157, 0.2);
+  border-right: none;
+}
+
+.cardItem:hover {
+  background: linear-gradient(180deg, rgba(72, 49, 157, 0.2) 18.75%, rgba(72, 49, 157, 0) 100%);
+  order: 2px solid rgba(72, 49, 157, 0.2);
+  border-right: none;
+}
+
+.cardInfo {
+  color: white;
+}
+.cardInfo .channelInfo {
+  color: #ccc;
 }/*# sourceMappingURL=Detail.module.css.map */
