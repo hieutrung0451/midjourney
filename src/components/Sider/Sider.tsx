@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { Layout, Menu, Button, MenuProps } from 'antd';
+import React from 'react';
+import { Layout, Menu, MenuProps } from 'antd';
 import { IoHome } from 'react-icons/io5';
+import { Link } from 'react-router-dom';
 import { CiYoutube } from 'react-icons/ci';
 import {
   HistoryOutlined,
@@ -14,7 +15,7 @@ import {
   MdMusicVideo,
 } from 'react-icons/md';
 
-import logo from '../../assets/Papaya.svg';  
+import logo from '../../assets/Papaya.svg';
 
 import styles from './styles/Sider.module.css';
 
@@ -37,8 +38,8 @@ function getItem(
 }
 
 const items: MenuProps['items'] = [
-  getItem('Home', 'home', <IoHome />),
-  getItem('Shorts', 'shorts', <CiYoutube />),
+  getItem('Home', 'home', [<IoHome />, <Link to='/' />]),
+  getItem('Shorts', 'shorts', [<CiYoutube />, <Link to='./shorts' />]),
   getItem('Subscriptions', 'subscriptions', <MdOutlineSubscriptions />),
   getItem('Papaya Music', 'music', <MdMusicVideo />),
   getItem(

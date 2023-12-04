@@ -3,10 +3,8 @@ import { Layout } from 'antd';
 
 import DATA from '../../data/data.json';
 
-import Sider from '../../components/Sider/Sider';
 import Header from '../../components/Header/Header';
 import Cards from '../../components/Cards/Cards';
-import Footer from '../../components/Footer/Footer';
 
 import styles from './Home.module.css';
 
@@ -22,26 +20,19 @@ interface Card {
   videoTime: string;
 }
 
-function Home() {
-  const [cards, setCards] = useState<Card[]>([]);
-  const [search, setSearch] = useState<string>('');
+interface Props {
+  cards: Card[];
+  search: string;
+}
 
-  useEffect(() => {
-    setCards(DATA);
-  }, [cards]);
-
+const Home = ({ cards, search }: Props) => {
   return (
-    <Layout className={styles.home}>
-      <Sider />
-      <Layout>
-        <Header onSearch={setSearch} />
-        <Layout.Content className={styles.content}>
-          <Cards cards={cards} search={search} />
-        </Layout.Content>
-        <Footer />
-      </Layout>
+    <Layout>
+      <Layout.Content className={styles.content}>
+        <Cards cards={cards} search={search} />
+      </Layout.Content>
     </Layout>
   );
-}
+};
 
 export default Home;
