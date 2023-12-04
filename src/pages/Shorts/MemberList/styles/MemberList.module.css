@@ -1,0 +1,12 @@
+.memberList {
+  width: 100%;
+  position: relative;
+  bottom: 88px;
+}
+.memberList .memberItem {
+  margin-right: 12px;
+}
+.memberList .join {
+  border-radius: 18px;
+  padding: 0 20px;
+}/*# sourceMappingURL=MemberList.module.css.map */

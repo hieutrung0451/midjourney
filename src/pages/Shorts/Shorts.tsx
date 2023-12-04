@@ -1,14 +1,90 @@
 import React from 'react';
-import { Layout } from 'antd';
+import { Layout, Col, Row, Avatar, Button, Card } from 'antd';
+import { UserOutlined, CaretRightOutlined } from '@ant-design/icons';
+
+import ShortsBar from './ShortsBar/ShortsBar';
+import MemberList from './MemberList/MemberList';
+import ChannelVideo from './ChannelVideos/ChannelVideo';
 
 import styles from './styles/Shorts.module.css';
 
-function Shorts() {
+interface Card {
+  id: number;
+  title: string;
+  channel_name: string;
+  image: string;
+  channel_avatar: string;
+  dateNow: string;
+  createAt: string;
+  view: string;
+  videoTime: string;
+}
+
+interface Props {
+  cards: Card[];
+}
+
+const Shorts = ({ cards }: Props): React.JSX.Element => {
   return (
     <Layout>
-      <Layout.Content className={styles.content}></Layout.Content>
+      <Layout.Content className={styles.content}>
+        <Row>
+          <img
+            src='https://lofigirl.com/wp-content/uploads/2022/11/Precious-Moments.png'
+            alt='wallpaper'
+          />
+        </Row>
+        <Row className={styles['channel-info']}>
+          <Col span={20}>
+            <Row>
+              <Col span={2}>
+                <Avatar size='large' icon={<UserOutlined />} />
+              </Col>
+              <Col>
+                <h2>Lofi</h2>
+                <div style={{ color: '#ccc' }}>
+                  <p>@lofi</p>
+                  <p>199k Subscriptions</p>
+                </div>
+              </Col>
+            </Row>
+          </Col>
+          <Col>
+            <Button className={styles['sub-button']}>Subscribed</Button>
+          </Col>
+        </Row>
+        <Row>
+          <ShortsBar />
+        </Row>
+        <Row>
+          <MemberList />
+        </Row>
+        <Row>
+          Videos
+          <CaretRightOutlined style={{ margin: '0 12px', fontSize: '20px' }} />
+          Play all
+        </Row>
+        <Row>
+          <Col>
+            <Row>
+              {cards.map((card) => (
+                <ChannelVideo
+                  id={card.id}
+                  title={card.title}
+                  channel_name={card.channel_name}
+                  view={card.view}
+                  dateNow={card.dateNow}
+                  createAt={card.createAt}
+                  image={card.image}
+                  videoTime={card.videoTime}
+                />
+              ))}
+            </Row>
+          </Col>
+        </Row>
+      </Layout.Content>
     </Layout>
   );
-}
+};
 
 export default Shorts;

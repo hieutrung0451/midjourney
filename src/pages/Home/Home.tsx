@@ -1,9 +1,5 @@
-import React, { useState, useEffect } from 'react';
 import { Layout } from 'antd';
 
-import DATA from '../../data/data.json';
-
-import Header from '../../components/Header/Header';
 import Cards from '../../components/Cards/Cards';
 
 import styles from './Home.module.css';

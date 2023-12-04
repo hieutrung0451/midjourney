@@ -1,0 +1,8 @@
+.shortsBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ccc;
+  position: relative;
+  bottom: 128px;
+}/*# sourceMappingURL=ShortsBar.module.css.map */

@@ -41,7 +41,7 @@ const App = (): React.JSX.Element => {
         <Routes>
           <Route path='/' element={<Home cards={cards} search={search} />} />
           <Route path='/detail/:id' element={<Detail />} />
-          <Route path='/shorts' element={<Shorts />} />
+          <Route path='/shorts' element={<Shorts cards={cards}/>} />
         </Routes>
         <Footer />
       </Layout>

@@ -1,0 +1,39 @@
+.channelVideo {
+  margin-top: 12px;
+  margin-right: 8px;
+  width: 166px;
+  background-color: #1d1c34;
+  background: linear-gradient(180deg, rgba(72, 49, 157, 0.2) 18.75%, rgba(72, 49, 157, 0) 100%);
+  border: 1px solid rgba(72, 49, 157, 0.2);
+  border-bottom: none;
+  color: "#fff";
+}
+.channelVideo .image {
+  height: 133px;
+  position: relative;
+  top: 0px;
+  right: 8px;
+}
+.channelVideo .videoTime {
+  position: absolute;
+  top: 100px;
+  right: 14px;
+  color: white;
+  background: #000;
+  padding: 1px 6px;
+}
+
+.info {
+  color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: 16px;
+  border-radius: 0px 0px 16px 16px;
+}
+.info h4 {
+  color: white;
+}
+.info .userInfo {
+  font-size: 13px;
+}/*# sourceMappingURL=ChannelVideo.module.css.map */
