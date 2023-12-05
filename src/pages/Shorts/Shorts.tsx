@@ -2,9 +2,9 @@ import React from 'react';
 import { Layout, Col, Row, Avatar, Button, Card } from 'antd';
 import { UserOutlined, CaretRightOutlined } from '@ant-design/icons';
 
-import ShortsBar from './ShortsBar/ShortsBar';
-import MemberList from './MemberList/MemberList';
-import ChannelVideo from './ChannelVideos/ChannelVideo';
+import ShortsBar from './components/ShortsBar/ShortsBar';
+import MemberList from './components/MemberList/MemberList';
+import ChannelVideo from './components/ChannelVideos/ChannelVideo';
 
 import styles from './styles/Shorts.module.css';
 

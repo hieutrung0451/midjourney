@@ -2,7 +2,7 @@ import React from 'react';
 import { Card } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
-import styles from '../styles/Detail.module.css';
+import styles from '../../styles/Detail.module.css';
 
 interface Card {
   id?: number;

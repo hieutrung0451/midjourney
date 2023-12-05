@@ -1,16 +1,10 @@
 import React from 'react';
 import { Row, Col, Card } from 'antd';
-import {
-  BellOutlined,
-  LikeOutlined,
-  DislikeOutlined,
-  EllipsisOutlined,
-} from '@ant-design/icons';
 
 import Video from './Video';
 import DetailInfo from './DetailInfo';
 
-import styles from '../styles/Detail.module.css';
+import styles from '../../styles/Detail.module.css';
 
 interface Card {
   id?: number;

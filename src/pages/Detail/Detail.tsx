@@ -1,46 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import { Layout, Row, Col, Avatar, Button, Flex, Card, Radio } from 'antd';
-import { useParams, useNavigate } from 'react-router-dom';
-import {
-  BellOutlined,
-  LikeOutlined,
-  DislikeOutlined,
-  EllipsisOutlined,
-} from '@ant-design/icons';
 
-import DetailVideo from './DetailVideo/DetailVideo';
-import DetailList from './DetailList/DetailList';
+import { Layout, Flex } from 'antd';
+import { useParams } from 'react-router-dom';
+
+import DetailList from './components/DetailList/DetailList';
+
+import DetailVideo from './components/DetailVideo/DetailVideo';
 
 import styles from './styles/Detail.module.css';
 
-interface Card {
-  id?: number;
-  title?: string;
-  channel_name?: string;
-  image?: string;
-  channel_avatar?: string;
-  dateNow: string;
-  createAt: string;
-  view?: string;
-  videoTime?: string;
-}
+import { ICard } from '../../types/schema';
 
 interface Props {
-  cards: Card[];
+  cards: ICard[];
 
   getParams: (id: string) => void;
 }
 
 const Detail = ({ cards, getParams }: Props): React.JSX.Element => {
   const { id } = useParams<{ id: string }>();
-  const [card, setCard] = useState<Card>();
+  const [card, setCard] = useState<ICard>();
 
   useEffect(() => {
     id && setCard(findCardsElementById(cards, +id));
     id && getParams(id);
   }, [id, cards]);
 
-  const findCardsElementById = (cards: Card[], id: number) => {
+  const findCardsElementById = (cards: ICard[], id: number) => {
     return cards.find((card) => {
       return card.id === id;
     });

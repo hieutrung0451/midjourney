@@ -7,7 +7,7 @@ import {
   EllipsisOutlined,
 } from '@ant-design/icons';
 
-import styles from '../styles/Detail.module.css';
+import styles from '../../styles/Detail.module.css';
 
 interface Card {
   id?: number;

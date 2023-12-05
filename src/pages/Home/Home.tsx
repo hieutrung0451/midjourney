@@ -1,9 +1,8 @@
 import { Layout } from 'antd';
 
-import Sider from 'antd/es/layout/Sider';
-import Cards from '../../components/Cards/Cards';
+import Cards from './components/Cards/Cards';
 
-import styles from './Home.module.css';
+import styles from './styles/Home.module.css';
 
 interface Card {
   id: number;
