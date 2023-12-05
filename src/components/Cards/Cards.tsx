@@ -27,9 +27,7 @@ const Cards = ({ cards, search }: Props): React.JSX.Element => {
   };
 
   const filteredList = (cards: Card[], search: string) => {
-    const filtered = cards.filter((card) => bySearch(card, search));
-
-    return filtered;
+    return cards.filter((card) => bySearch(card, search));
   };
 
   return (

@@ -1,5 +1,6 @@
 import { Layout } from 'antd';
 
+import Sider from 'antd/es/layout/Sider';
 import Cards from '../../components/Cards/Cards';
 
 import styles from './Home.module.css';
@@ -21,13 +22,11 @@ interface Props {
   search: string;
 }
 
-const Home = ({ cards, search }: Props) => {
+const Home = ({ cards, search }: Props): React.JSX.Element => {
   return (
-    <Layout>
-      <Layout.Content className={styles.content}>
-        <Cards cards={cards} search={search} />
-      </Layout.Content>
-    </Layout>
+    <Layout.Content className={styles.content}>
+      <Cards cards={cards} search={search} />
+    </Layout.Content>
   );
 };
 

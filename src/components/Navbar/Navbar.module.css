@@ -8,4 +8,7 @@
   font-style: normal;
   font-weight: 600;
   letter-spacing: -0.408px;
+}
+.navbar .nav-item:hover {
+  background-image: url("../../assets/Seletced.svg");
 }/*# sourceMappingURL=Navbar.module.css.map */

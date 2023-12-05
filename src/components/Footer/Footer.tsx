@@ -2,8 +2,8 @@ import React from 'react';
 import { Flex, Layout, Avatar } from 'antd';
 
 import website from '../../assets/website.svg';
-import twitter from '../../assets/twitter.svg';
-import instagram from '../../assets/instagram.svg';
+import twitter from '../../assets/twitter-2.png';
+import instagram from '../../assets/instagram1.png';
 
 import styles from './styles/Footer.module.css';
 

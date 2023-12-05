@@ -2,11 +2,8 @@
   background: #1d1c34;
   box-shadow: -10px 30px 80px 0px rgba(59, 38, 123, 0.7);
 }
-.content img {
-  width: 728px;
-}
 .content h2 {
-  margin: 18px 0 8px 0;
+  margin: 18px 0 8px 22px;
 }
 .content .info {
   color: #ccc;
@@ -29,6 +26,20 @@
   color: #ccc;
 }
 
+.subscribed {
+  border-radius: 30px;
+  background: linear-gradient(180deg, rgba(196, 39, 251, 0) -2.37%, #8015a7 132.95%);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  color: white;
+  width: 180px;
+  border: 0;
+}
+
+.infoContainer {
+  padding: 22px;
+}
+
 .user {
   position: relative;
   top: -60px;
@@ -42,6 +53,14 @@
   background-color: #1d1c34;
   border: 2px solid rgba(72, 49, 157, 0.2);
   border-right: none;
+}
+.cardItem .videoTime {
+  position: absolute;
+  color: white;
+  background: #000;
+  padding: 1px 6px;
+  bottom: 6px;
+  left: 100px;
 }
 
 .cardItem:hover {

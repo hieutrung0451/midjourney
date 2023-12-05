@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+  useParams,
+} from 'react-router-dom';
 import { Layout } from 'antd';
 
 import DATA from './data/data.json';
@@ -28,19 +34,30 @@ interface Card {
 const App = (): React.JSX.Element => {
   const [cards, setCards] = useState<Card[]>([]);
   const [search, setSearch] = useState<string>('');
+  const { pathname } = useLocation();
+  const [idParams, setIdParams] = useState<string>();
 
   useEffect(() => {
+    console.log(pathname);
+
     setCards(DATA);
-  }, [cards]);
+  }, [cards, pathname]);
+
+  const getParams = (id: string) => {
+    setIdParams(id);
+  };
 
   return (
     <Layout className={styles.container}>
-      <Sider />
+      {pathname === `/detail/${idParams}` ? null : <Sider />}
       <Layout>
         <Header onSearch={setSearch} />
         <Routes>
           <Route path='/' element={<Home cards={cards} search={search} />} />
-          <Route path='/detail/:id' element={<Detail cards={cards} />} />
+          <Route
+            path='/detail/:id'
+            element={<Detail cards={cards} getParams={getParams} />}
+          />
           <Route path='/shorts' element={<Shorts cards={cards} />} />
         </Routes>
         <Footer />
