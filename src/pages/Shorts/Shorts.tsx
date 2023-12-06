@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout, Col, Row, Avatar, Button, Card } from 'antd';
-import { UserOutlined, CaretRightOutlined } from '@ant-design/icons';
+import { CaretRightOutlined, BellOutlined } from '@ant-design/icons';
 
 import ShortsBar from './components/ShortsBar/ShortsBar';
 import MemberList from './components/MemberList/MemberList';
@@ -32,13 +32,19 @@ const Shorts = ({ cards }: Props): React.JSX.Element => {
           <img
             src='https://lofigirl.com/wp-content/uploads/2022/11/Precious-Moments.png'
             alt='wallpaper'
+            className={styles.wallpaper}
           />
         </Row>
         <Row className={styles['channel-info']}>
           <Col span={20}>
             <Row>
               <Col span={2}>
-                <Avatar size='large' icon={<UserOutlined />} />
+                <Avatar
+                  size='large'
+                  icon={
+                    <img src='https://upload.wikimedia.org/wikipedia/vi/2/23/Lofi_girl_logo.jpg' />
+                  }
+                />
               </Col>
               <Col>
                 <h2>Lofi Girl</h2>
@@ -50,7 +56,9 @@ const Shorts = ({ cards }: Props): React.JSX.Element => {
             </Row>
           </Col>
           <Col>
-            <Button className={styles['sub-button']}>Subscribed</Button>
+            <Button className={styles['sub-button']} icon={<BellOutlined />}>
+              Subscribed
+            </Button>
           </Col>
         </Row>
         <Row>

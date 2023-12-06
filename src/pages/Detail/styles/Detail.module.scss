@@ -1,9 +1,21 @@
+.navbar {
+  background: linear-gradient(180deg, #2b2f53 3.16%, #1d1c34 36.05%);
+  margin-left: 80px;
+  .nav-item {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: -0.408px;
+  }
+}
+
 .content {
   background: #1d1c34;
   box-shadow: -10px 30px 80px 0px rgba(59, 38, 123, 0.7);
 
   h2 {
-    margin: 18px 0 8px 22px;
+    margin: 18px 0 16px 2px;
   }
 
   .info {
@@ -47,11 +59,21 @@
 
 .infoContainer {
   padding: 22px;
+  border-radius: 12.813px;
+  background: linear-gradient(
+    180deg,
+    rgba(72, 49, 157, 0.2) 18.75%,
+    rgba(72, 49, 157, 0) 81.33%
+  );
+  width: 97%;
+  margin-left: 21.5px;
+  margin-top: -14px;
+  border: 2px solid rgba(72, 49, 157, 0.2);
 }
 
 .user {
   position: relative;
-  top: -60px;
+  top: -40px;
 }
 
 .cardItem {

@@ -26,11 +26,6 @@ const DetailVideo = ({ card }: Props): React.JSX.Element => {
   return (
     <div className={styles.user}>
       <Video card={card} />
-      <Row>
-        <Col>
-          <h2>{card?.title}</h2>
-        </Col>
-      </Row>
       <DetailInfo card={card} />
     </div>
   );

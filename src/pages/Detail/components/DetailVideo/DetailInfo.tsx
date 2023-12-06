@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Row, Col, Card, Button, Avatar, Radio } from 'antd';
 import {
   BellOutlined,
@@ -26,6 +27,8 @@ interface Props {
 }
 
 const DetailInfo = ({ card }: Props) => {
+  const navigate = useNavigate();
+
   const options = [
     { label: [<LikeOutlined />, ' 299'], value: '1' },
     { label: <DislikeOutlined />, value: '2' },
@@ -33,8 +36,25 @@ const DetailInfo = ({ card }: Props) => {
     { label: <EllipsisOutlined />, value: '4' },
   ];
 
+  const calculatorDate = (dateNow: string, createAt: string) => {
+    const date_Now: Date = new Date(dateNow);
+    const create_At: Date = new Date(createAt);
+
+    const month_Between = date_Now.getMonth() - create_At.getMonth();
+    const year_Between = date_Now.getFullYear() - create_At.getFullYear();
+
+    const result = month_Between + year_Between * 12;
+
+    return result;
+  };
+
   return (
     <Row className={styles.infoContainer}>
+      <Row style={{ width: '100%' }}>
+        <Col>
+          <h2>{card?.title}</h2>
+        </Col>
+      </Row>
       <Col>
         <Avatar
           src={
@@ -47,6 +67,8 @@ const DetailInfo = ({ card }: Props) => {
               }}
             />
           }
+          onClick={() => navigate('/shorts')}
+          style={{ cursor: 'pointer' }}
         />
       </Col>
       <Col className={styles.info}>
@@ -71,7 +93,7 @@ const DetailInfo = ({ card }: Props) => {
         <Row className={styles.desc}>
           <div>{card?.view} views </div>
           <div className={styles.between}> - </div>
-          <div> 1 month ago</div>
+          <div>1 month</div>
         </Row>
 
         <p style={{ width: '77%' }} className={styles.detail}>

@@ -2,6 +2,8 @@ import React from 'react';
 import { Card } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
+import Navbar from '../../../../layouts/Navbar/Navbar';
+
 import styles from '../../styles/Detail.module.css';
 
 interface Card {
@@ -36,7 +38,15 @@ const DetailList = ({ cards }: Props): React.JSX.Element => {
   };
 
   return (
-    <div style={{ width: '100%', marginRight: '26px' }}>
+    <div
+      style={{
+        width: '109%',
+        marginRight: '26px',
+        height: '500px',
+        overflowY: 'scroll',
+        overflowX: 'hidden',
+      }}
+    >
       {cards.map((card) => (
         <Card
           className={styles.cardItem}

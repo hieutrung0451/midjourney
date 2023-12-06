@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Menu, MenuProps } from 'antd';
+import { Layout, Menu, MenuProps, Flex } from 'antd';
 import { IoHome } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import { CiYoutube } from 'react-icons/ci';
@@ -7,6 +7,7 @@ import {
   HistoryOutlined,
   ClockCircleOutlined,
   DownloadOutlined,
+  UnorderedListOutlined,
 } from '@ant-design/icons';
 import { IoIosArrowDown } from 'react-icons/io';
 import {
@@ -39,7 +40,7 @@ function getItem(
 
 const items: MenuProps['items'] = [
   getItem('Home', 'home', [
-    <IoHome style={{ marginRight: '10px' }}                 />,
+    <IoHome style={{ marginRight: '10px' }} />,
     <Link to='/' />,
   ]),
   getItem('Shorts', 'shorts', [
@@ -84,8 +85,14 @@ const items: MenuProps['items'] = [
 
 const Sider = (): React.JSX.Element => {
   return (
-    <Layout.Sider className={styles.sider} style={{ background: '#1c1b33' }}>
+    <Layout.Sider
+      className={styles.sider}
+      style={{
+        background: 'linear-gradient(168deg, #2E335A 1.62%, #1C1B33 95.72%);',
+      }}
+    >
       <img src={logo} alt='logo' />
+
       <Menu
         defaultSelectedKeys={['1']}
         defaultOpenKeys={['sub1']}
