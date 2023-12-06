@@ -71,23 +71,29 @@ const DetailInfo = ({ card }: Props) => {
           style={{ cursor: 'pointer' }}
         />
       </Col>
-      <Col className={styles.info}>
-        <p>{card?.channel_name}</p>
-        <p>200k subscribers</p>
-      </Col>
-      <Col className={styles.btn}>
-        <Button
-          size='large'
-          className={styles.subscribed}
-          shape='round'
-          icon={<BellOutlined />}
-        >
-          Subscribed
-        </Button>
-      </Col>
-      <Col>
-        <Radio.Group options={options} optionType='button' />
-      </Col>
+      <Row>
+        <Col className={styles.info}>
+          <p>{card?.channel_name}</p>
+          <p>200k subscribers</p>
+        </Col>
+        <Col className={styles.btn}>
+          <Button
+            size='large'
+            className={styles.subscribed}
+            shape='round'
+            icon={<BellOutlined />}
+          >
+            Subscribed
+          </Button>
+          <Col>
+            <Radio.Group
+              options={options}
+              optionType='button'
+              style={{ marginTop: '6px' }}
+            />
+          </Col>
+        </Col>
+      </Row>
 
       <Col>
         <Row className={styles.desc}>

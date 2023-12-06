@@ -52,7 +52,10 @@ const CardItem = ({
       className={styles.card}
       bordered={false}
       hoverable
-      onClick={() => navigate(`/detail/${id}`)}
+      onClick={() => {
+        navigate(`/detail/${id}`);
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      }}
     >
       <div className={styles.videoTime}>{videoTime}</div>
       <Flex>

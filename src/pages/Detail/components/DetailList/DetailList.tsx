@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
@@ -25,6 +25,8 @@ interface Props {
 const DetailList = ({ cards }: Props): React.JSX.Element => {
   const navigate = useNavigate();
 
+
+
   const calculatorDate = (dateNow: string, createAt: string) => {
     const date_Now: Date = new Date(dateNow);
     const create_At: Date = new Date(createAt);
@@ -40,11 +42,13 @@ const DetailList = ({ cards }: Props): React.JSX.Element => {
   return (
     <div
       style={{
-        width: '109%',
+        width: '177%',
         marginRight: '26px',
         height: '500px',
         overflowY: 'scroll',
         overflowX: 'hidden',
+        scrollbarColor: 'white',
+        scrollbarWidth: 'thin',
       }}
     >
       {cards.map((card) => (
@@ -62,7 +66,10 @@ const DetailList = ({ cards }: Props): React.JSX.Element => {
             />
           }
           hoverable
-          onClick={() => navigate(`/detail/${card.id}`)}
+          onClick={() => {
+            navigate(`/detail/${card.id}`);
+            window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+          }}
         >
           <div className={styles.videoTime}>{card.videoTime}</div>
           <div className={styles.cardInfo}>

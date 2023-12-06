@@ -38,7 +38,7 @@ const App = (): React.JSX.Element => {
 
   return (
     <Layout className={styles.container}>
-      {pathname !== `/detail/${idParams}` && <Sider />}
+      <Sider />
       <Layout>
         <Header onSearch={setSearch} />
         <Routes>

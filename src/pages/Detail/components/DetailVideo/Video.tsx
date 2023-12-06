@@ -26,7 +26,7 @@ const Video = ({ card }: Props) => {
         <img
           src={card?.image}
           alt='video'
-          style={{ width: '826px', marginLeft: '22px' }}
+          style={{ width: '630px', marginLeft: '22px' }}
         />
       </Col>
     </Row>
