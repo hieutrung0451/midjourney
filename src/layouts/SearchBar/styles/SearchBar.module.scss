@@ -31,3 +31,32 @@
   background: none;
   color: rgba(255, 255, 255, 0.6);
 }
+
+@media only screen and (max-width: 500px) {
+  .input-search {
+    width: 318px;
+  }
+
+  .input-search {
+    width: 224px;
+    margin: 0 70px;
+  }
+
+  .mic {
+    right: 77px;
+  }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 501px) {
+  .input-search {
+    width: 318px;
+  }
+
+  .input-search {
+    width: 306px;
+  }
+
+  .mic {
+    right: 6px;
+  }
+}

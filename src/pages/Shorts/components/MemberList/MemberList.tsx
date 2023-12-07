@@ -7,11 +7,11 @@ import styles from './styles/MemberList.module.css';
 const MemberList = () => {
   return (
     <Flex justify='space-around' gap={40} className={styles.memberList}>
-      <div>
+      <div className={styles.memberList__text}>
         <h4>Our members</h4>
         <p>Thank you channel members</p>
       </div>
-      <div>
+      <div className={styles.memberList__members}>
         <Avatar
           style={{ backgroundColor: '#87d068' }}
           className={styles.memberItem}

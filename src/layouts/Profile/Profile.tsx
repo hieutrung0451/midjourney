@@ -11,16 +11,19 @@ function Profile() {
 
   return (
     <Space size={[20, 16]} wrap>
-      <Button
-        type='text'
-        icon={<HiOutlineVideoCamera color='#999999' size='24px' />}
-        size={size}
-      />
-      <Button
-        type='text'
-        icon={<IoNotificationsOutline color='#999999' size='24px' />}
-        size={size}
-      />
+      <div className={styles['btn-group']}>
+        <Button
+          type='text'
+          icon={<HiOutlineVideoCamera color='#999999' size='24px' />}
+          size={size}
+        />
+        <Button
+          type='text'
+          icon={<IoNotificationsOutline color='#999999' size='24px' />}
+          size={size}
+        />
+      </div>
+
       <Avatar
         style={{
           backgroundColor: '#22D7FF',

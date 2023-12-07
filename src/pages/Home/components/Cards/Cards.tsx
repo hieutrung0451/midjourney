@@ -1,6 +1,7 @@
 import { Row, Col } from 'antd';
 
 import Card from './Card/CardItem';
+import styles from './Card/CardItem.module.css';
 
 interface Card {
   id: number;
@@ -31,9 +32,12 @@ const Cards = ({ cards, search }: Props): React.JSX.Element => {
   };
 
   return (
-    <Row gutter={[16, 16]} style={{ marginRight: '0px', padding: '40px' }}>
+    <Row
+      // style={{ marginRight: '0px', padding: '40px' }}
+      className={styles.cards}
+    >
       {filteredList(cards, search).map((card) => (
-        <Col span={8}>
+        <Col xs={24} xl={8} md={8} style={{ padding: '12px' }}>
           <Card
             key={card.id}
             id={card.id}

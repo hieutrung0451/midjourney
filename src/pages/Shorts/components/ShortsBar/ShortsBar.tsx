@@ -1,5 +1,6 @@
 import React from 'react';
 import { Menu } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 import {
   HomeOutlined,
@@ -15,6 +16,8 @@ import {
 import styles from './ShortsBar.module.css';
 
 const ShortsBar = () => {
+  const navigate = useNavigate();
+
   return (
     <Menu
       mode='horizontal'
@@ -22,7 +25,11 @@ const ShortsBar = () => {
       className={styles.shortsBar}
       inlineCollapsed={false}
     >
-      <Menu.Item key='1' className={styles['nav-item']}>
+      <Menu.Item
+        key='1'
+        className={styles['nav-item']}
+        onClick={() => navigate('/')}
+      >
         <HomeOutlined /> Home
       </Menu.Item>
       <Menu.Item key='2' className={styles['nav-item']}>

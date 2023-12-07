@@ -32,4 +32,22 @@
   border: 0;
 }
 
-/*# sourceMappingURL=Shorts.module.css.map */
+
+@media only screen and (max-width: 500px) {
+  .content .user {
+    margin-left: 33px;
+  }
+  .content .wallpaper {
+    margin-top: 12px;
+    margin-left: 0;
+    border-radius: 0;
+    height: 200px;
+  }
+}
+@media only screen and (max-width: 900px) and (min-width: 501px) {
+  .videos {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: auto;
+  }
+}/*# sourceMappingURL=Shorts.module.css.map */

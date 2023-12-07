@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Menu, MenuProps, Flex } from 'antd';
+import { Layout, Menu, MenuProps, Dropdown, Space } from 'antd';
 import { IoHome } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import { CiYoutube } from 'react-icons/ci';
@@ -8,6 +8,7 @@ import {
   ClockCircleOutlined,
   DownloadOutlined,
   UnorderedListOutlined,
+  DownOutlined,
 } from '@ant-design/icons';
 import { IoIosArrowDown } from 'react-icons/io';
 import {
@@ -104,5 +105,18 @@ const Sider = (): React.JSX.Element => {
     </Layout.Sider>
   );
 };
+
+// const Sider = (): React.JSX.Element => {
+//   return (
+//     <Dropdown menu={{ items }} trigger={['click']}>
+//       <a onClick={(e) => e.preventDefault()}>
+//         <Space>
+//           Click me
+//           <DownOutlined />
+//         </Space>
+//       </a>
+//     </Dropdown>
+//   );
+// };
 
 export default Sider;

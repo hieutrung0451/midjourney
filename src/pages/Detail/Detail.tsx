@@ -22,6 +22,11 @@ const Detail = ({ cards, getParams }: Props): React.JSX.Element => {
   const [card, setCard] = useState<ICard>();
 
   useEffect(() => {
+    // 👇️ scroll to top on page load
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, []);
+
+  useEffect(() => {
     id && setCard(findCardsElementById(cards, +id));
     id && getParams(id);
   }, [id, cards]);
@@ -35,7 +40,7 @@ const Detail = ({ cards, getParams }: Props): React.JSX.Element => {
   return (
     <Layout>
       <Layout.Content className={styles.content}>
-        <Flex>
+        <Flex className={styles.detailFlex}>
           <DetailVideo card={card} />
           <DetailList cards={cards} />
         </Flex>

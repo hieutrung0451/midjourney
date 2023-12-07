@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import { Layout } from 'antd';
 import {
   BrowserRouter as Router,
@@ -32,13 +31,17 @@ const App = (): React.JSX.Element => {
     setCards(DATA);
   }, [cards]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   const getParams = (id: string) => {
     setIdParams(id);
   };
 
   return (
     <Layout className={styles.container}>
-      <Sider />
+      {/* <Sider /> */}
       <Layout>
         <Header onSearch={setSearch} />
         <Routes>

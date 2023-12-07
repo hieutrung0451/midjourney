@@ -25,3 +25,13 @@
     border: 0;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .memberList__text {
+    display: none;
+  }
+
+  .memberList__members {
+    display: flex;
+  }
+}

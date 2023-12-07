@@ -11,4 +11,10 @@
 .profile-container {
   width: 220px;
   height: 32px;
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    padding: 0;
+  }
 }/*# sourceMappingURL=Header.module.css.map */

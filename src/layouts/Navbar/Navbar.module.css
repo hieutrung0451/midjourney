@@ -11,4 +11,10 @@
 }
 .navbar .ant-menu-item:hover {
   background-image: url("../../assets/Seletced.svg");
+}
+
+@media only screen and (max-width: 500px) {
+  .navbar {
+    overflow-x: scroll;
+  }
 }/*# sourceMappingURL=Navbar.module.css.map */

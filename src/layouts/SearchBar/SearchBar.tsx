@@ -6,10 +6,11 @@ import type { SizeType } from 'antd/es/config-provider/SizeContext';
 import styles from './styles/SearchBar.module.css';
 
 interface Props {
+  visible: boolean;
   onSearch: (filtered: string) => void;
 }
 
-const SearchBar = ({ onSearch }: Props): React.JSX.Element => {
+const SearchBar = ({ onSearch, visible }: Props): React.JSX.Element => {
   const [size, setSize] = useState<SizeType>('middle');
 
   return (
@@ -27,6 +28,21 @@ const SearchBar = ({ onSearch }: Props): React.JSX.Element => {
         size={size}
         className={styles.mic}
       />
+      {visible && (
+        <ul
+          style={{
+            position: 'absolute',
+            top: '54px',
+            width: '100%',
+            backgroundColor: 'red',
+            zIndex: '1',
+          }}
+        >
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+        </ul>
+      )}
     </div>
   );
 };

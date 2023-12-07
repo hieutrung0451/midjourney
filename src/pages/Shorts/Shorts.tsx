@@ -46,7 +46,7 @@ const Shorts = ({ cards }: Props): React.JSX.Element => {
                   }
                 />
               </Col>
-              <Col>
+              <Col className={styles.user}>
                 <h2>Lofi Girl</h2>
                 <div style={{ color: '#ccc' }}>
                   <p>@lofigirl</p>
@@ -74,7 +74,10 @@ const Shorts = ({ cards }: Props): React.JSX.Element => {
         </Row>
         <Row>
           <Col>
-            <Row>
+            <Row
+              className='videos'
+              style={{ display: 'flex', flexWrap: 'nowrap', overflow: 'auto' }}
+            >
               {cards.slice(0, 5).map((card) => (
                 <ChannelVideo
                   id={card.id}

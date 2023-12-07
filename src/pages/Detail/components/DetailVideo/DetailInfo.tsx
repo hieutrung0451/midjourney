@@ -55,27 +55,28 @@ const DetailInfo = ({ card }: Props) => {
           <h2>{card?.title}</h2>
         </Col>
       </Row>
-      <Col>
-        <Avatar
-          src={
-            <img
-              src={card?.channel_avatar}
-              alt={card?.title}
-              style={{
-                width: '100%',
-                height: '100%',
-              }}
-            />
-          }
-          onClick={() => navigate('/shorts')}
-          style={{ cursor: 'pointer' }}
-        />
-      </Col>
       <Row>
+        <Col>
+          <Avatar
+            src={
+              <img
+                src={card?.channel_avatar}
+                alt={card?.title}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                }}
+              />
+            }
+            onClick={() => navigate('/shorts')}
+            style={{ cursor: 'pointer' }}
+          />
+        </Col>
         <Col className={styles.info}>
           <p>{card?.channel_name}</p>
           <p>200k subscribers</p>
         </Col>
+
         <Col className={styles.btn}>
           <Button
             size='large'
@@ -85,13 +86,13 @@ const DetailInfo = ({ card }: Props) => {
           >
             Subscribed
           </Button>
-          <Col>
+          {/* <Col>
             <Radio.Group
               options={options}
               optionType='button'
               style={{ marginTop: '6px' }}
             />
-          </Col>
+          </Col> */}
         </Col>
       </Row>
 
@@ -102,7 +103,7 @@ const DetailInfo = ({ card }: Props) => {
           <div>1 month</div>
         </Row>
 
-        <p style={{ width: '77%' }} className={styles.detail}>
+        <p className={styles.detail}>
           Celestial Alignment is bringing you a calming and reassuring treatment
           with his latest release “Precious Moments”. Beautiful slow progressing
           guitars act as an aid to sooth your mind after a long day. Through the

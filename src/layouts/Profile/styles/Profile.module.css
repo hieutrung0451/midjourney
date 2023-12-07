@@ -2,4 +2,13 @@
   background-color: "#22D7FF";
   color: "#fff";
   margin-top: -16px;
+}
+
+@media only screen and (max-width: 500px) {
+  .avatar {
+    display: none;
+  }
+  .btn-group {
+    display: none;
+  }
 }/*# sourceMappingURL=Profile.module.css.map */

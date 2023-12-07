@@ -11,6 +11,7 @@
 }
 
 .content {
+  height: 100%;
   background: #1d1c34;
   box-shadow: -10px 30px 80px 0px rgba(59, 38, 123, 0.7);
 }
@@ -35,6 +36,7 @@
   margin: 0 8px;
 }
 .content .detail {
+  width: 77%;
   color: #ccc;
 }
 
@@ -92,4 +94,74 @@
 }
 .cardInfo .channelInfo {
   color: #ccc;
+}
+
+.video {
+  width: 682px;
+  margin-left: 22px;
+}
+
+.detailList {
+  width: 177%;
+  margin-right: 26px;
+  height: 500px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-color: "white";
+  scrollbar-width: thin;
+}
+
+@media only screen and (max-width: 500px) {
+  .detailFlex {
+    flex-direction: column;
+  }
+  .cardItem {
+    width: 103%;
+  }
+  .video {
+    width: 336px;
+  }
+  .infoContainer {
+    width: 90%;
+    margin-bottom: 12px;
+  }
+  .detailList {
+    width: 96%;
+  }
+  .subscribed {
+    width: 166%;
+    position: absolute;
+    left: 49%;
+    top: -44px;
+  }
+  .content .info {
+    color: #ccc;
+    margin-left: 11px;
+    margin-top: -7px;
+  }
+  .content .detail {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 900px) and (min-width: 501px) {
+  .detailFlex {
+    flex-direction: column;
+  }
+  .video {
+    width: 790px;
+  }
+  .subscribed {
+    width: 166%;
+    position: absolute;
+    left: 300%;
+    top: -10px;
+  }
+  .infoContainer {
+    width: 95%;
+  }
+  .detailList {
+    width: 96%;
+    margin-top: 12px;
+    margin-left: 11px;
+  }
 }/*# sourceMappingURL=Detail.module.css.map */
