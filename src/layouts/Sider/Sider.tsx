@@ -8,7 +8,6 @@ import {
   ClockCircleOutlined,
   DownloadOutlined,
   UnorderedListOutlined,
-  DownOutlined,
 } from '@ant-design/icons';
 import { IoIosArrowDown } from 'react-icons/io';
 import {
@@ -40,42 +39,44 @@ function getItem(
 }
 
 const items: MenuProps['items'] = [
-  getItem('Home', 'home', [
-    <IoHome style={{ marginRight: '10px' }} />,
-    <Link to='/' />,
+  getItem(null, 'menu', null, [
+    getItem('Home', '', [
+      <IoHome style={{ marginRight: '10px' }} />,
+      <Link to='/' />,
+    ]),
+    getItem('Shorts', 'shorts', [
+      <CiYoutube style={{ marginRight: '10px' }} />,
+      <Link to='./shorts' />,
+    ]),
+    getItem('Subscriptions', 'subscriptions', <MdOutlineSubscriptions />),
+    getItem('Papaya Music', 'music', <MdMusicVideo />),
+    getItem(
+      'MY CHANNEL',
+      'g1',
+      null,
+      [
+        getItem('Library', 'library', <MdOutlineVideoLibrary />),
+        getItem('History', 'history', <HistoryOutlined />),
+        getItem('Your Videos', 'yourVideos'),
+        getItem('Watch Later', 'watchLater', <ClockCircleOutlined />),
+        getItem('Downloads', 'downloads', <DownloadOutlined />),
+        getItem('Show More', 'showMore', <IoIosArrowDown />),
+      ],
+      'group'
+    ),
+    getItem(
+      'SUBSCRIPTIONS',
+      'g2',
+      null,
+      [
+        getItem('DesignCode', 'designCode'),
+        getItem('Figma', 'figma'),
+        getItem('Sketch', 'sketch'),
+        getItem('spline', 'spline'),
+      ],
+      'group'
+    ),
   ]),
-  getItem('Shorts', 'shorts', [
-    <CiYoutube style={{ marginRight: '10px' }} />,
-    <Link to='./shorts' />,
-  ]),
-  getItem('Subscriptions', 'subscriptions', <MdOutlineSubscriptions />),
-  getItem('Papaya Music', 'music', <MdMusicVideo />),
-  getItem(
-    'MY CHANNEL',
-    'g1',
-    null,
-    [
-      getItem('Library', 'library', <MdOutlineVideoLibrary />),
-      getItem('History', 'history', <HistoryOutlined />),
-      getItem('Your Videos', 'yourVideos'),
-      getItem('Watch Later', 'watchLater', <ClockCircleOutlined />),
-      getItem('Downloads', 'downloads', <DownloadOutlined />),
-      getItem('Show More', 'showMore', <IoIosArrowDown />),
-    ],
-    'group'
-  ),
-  getItem(
-    'SUBSCRIPTIONS',
-    'g2',
-    null,
-    [
-      getItem('DesignCode', 'designCode'),
-      getItem('Figma', 'figma'),
-      getItem('Sketch', 'sketch'),
-      getItem('spline', 'spline'),
-    ],
-    'group'
-  ),
 ];
 
 // interface Props {
@@ -86,13 +87,8 @@ const items: MenuProps['items'] = [
 
 const Sider = (): React.JSX.Element => {
   return (
-    <Layout.Sider
-      className={styles.sider}
-      style={{
-        background: 'linear-gradient(168deg, #2E335A 1.62%, #1C1B33 95.72%);',
-      }}
-    >
-      <img src={logo} alt='logo' />
+    <div className={styles.sider}>
+      {/* <img src={logo} alt='logo' /> */}
 
       <Menu
         defaultSelectedKeys={['1']}
@@ -102,7 +98,7 @@ const Sider = (): React.JSX.Element => {
         theme='dark'
         className={styles.menu}
       />
-    </Layout.Sider>
+    </div>
   );
 };
 

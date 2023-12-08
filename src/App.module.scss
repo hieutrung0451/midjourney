@@ -1,6 +1,7 @@
 .container {
   width: 100%;
-  height: auto;
+  height: 100%;
+  min-height: 100vh;
 }
 
 .content {
@@ -8,5 +9,8 @@
   box-shadow: -10px 30px 80px 0px rgba(59, 38, 123, 0.7);
 }
 
-@media only screen and (max-width: 900px) and (min-width: 501px) {
+@media only screen and (max-width: 500px) {
+  .container {
+    width: 100%;
+  }
 }

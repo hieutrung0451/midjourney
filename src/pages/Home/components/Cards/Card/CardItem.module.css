@@ -1,14 +1,18 @@
 .card {
   background-color: #1d1c34;
-  background: linear-gradient(180deg, rgba(72, 49, 157, 0.2) 18.75%, rgba(72, 49, 157, 0) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(72, 49, 157, 0.2) 18.75%,
+    rgba(72, 49, 157, 0) 100%
+  );
   border: 1px solid rgba(72, 49, 157, 0.2);
   border-bottom: none;
-  color: "#fff";
+  color: '#fff';
 }
 .card .videoTime {
   position: absolute;
   color: white;
-  top: 144px;
+  top: 187px;
   right: 9px;
   background: #000;
   padding: 1px 6px;
@@ -32,9 +36,10 @@
   .card {
     flex: 0 0 auto;
   }
+
   .card .videoTime {
     position: absolute;
     top: 112px;
     flex: 0 0 auto;
   }
-}/*# sourceMappingURL=CardItem.module.css.map */
+} /*# sourceMappingURL=CardItem.module.css.map */

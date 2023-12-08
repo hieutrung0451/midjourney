@@ -25,11 +25,10 @@ function Profile() {
       </div>
 
       <Avatar
-        style={{
-          backgroundColor: '#22D7FF',
-          color: '#fff',
-        }}
         className={styles.avatar}
+        icon={
+          <img src='https://upload.wikimedia.org/wikipedia/vi/2/23/Lofi_girl_logo.jpg' />
+        }
       >
         A
       </Avatar>

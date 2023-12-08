@@ -1,4 +1,10 @@
 .sider {
+  height: 0;
+  width: 5%;
+  z-index: 1;
+  background-color: #1c1b33;
+  position: relative;
+  top: 20px;
   background: linear-gradient(168deg, #2e335a 1.62%, #1c1b33 95.72%) !important;
   img {
     margin-top: 48px;
@@ -7,7 +13,9 @@
 }
 
 .menu {
-  background: linear-gradient(168deg, #2e335a 1.62%, #1c1b33 95.72%);
+  // background: linear-gradient(168deg, #2e335a 1.62%, #1c1b33 95.72%);
+  // background: #000;
+  background-color: #1c1b33;
 }
 
 // .menu li:hover {
@@ -17,3 +25,27 @@
 //     rgba(97, 54, 144, 0) 100%
 //   );
 // }
+
+.menu ul {
+  width: 220px;
+  background-color: #1c1b33 !important;
+}
+
+@media only screen and (max-width: 500px) {
+  .sider {
+    width: 16%;
+    position: relative;
+    top: 12px;
+  }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 501px) {
+  .sider {
+    width: 16%;
+    position: relative;
+    top: 18px;
+  }
+  .menu {
+    width: 46%;
+  }
+}

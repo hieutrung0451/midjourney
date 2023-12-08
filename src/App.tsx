@@ -41,7 +41,7 @@ const App = (): React.JSX.Element => {
 
   return (
     <Layout className={styles.container}>
-      {/* <Sider /> */}
+      <Sider />
       <Layout>
         <Header onSearch={setSearch} />
         <Routes>

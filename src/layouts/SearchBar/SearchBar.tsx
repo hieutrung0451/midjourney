@@ -28,7 +28,7 @@ const SearchBar = ({ onSearch, visible }: Props): React.JSX.Element => {
         size={size}
         className={styles.mic}
       />
-      {visible && (
+      {/* {visible && (
         <ul
           style={{
             position: 'absolute',
@@ -42,7 +42,7 @@ const SearchBar = ({ onSearch, visible }: Props): React.JSX.Element => {
           <li>2</li>
           <li>3</li>
         </ul>
-      )}
+      )} */}
     </div>
   );
 };

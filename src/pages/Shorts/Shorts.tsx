@@ -30,7 +30,7 @@ const Shorts = ({ cards }: Props): React.JSX.Element => {
       <Layout.Content className={styles.content}>
         <Row>
           <img
-            src='https://lofigirl.com/wp-content/uploads/2022/11/Precious-Moments.png'
+            src='https://lofigirl.com/wp-content/uploads/2022/10/Relief.png'
             alt='wallpaper'
             className={styles.wallpaper}
           />
@@ -67,7 +67,7 @@ const Shorts = ({ cards }: Props): React.JSX.Element => {
         <Row>
           <MemberList />
         </Row>
-        <Row>
+        <Row style={{ margin: '0 12px' }}>
           Videos
           <CaretRightOutlined style={{ margin: '0 12px', fontSize: '20px' }} />
           Play all
@@ -76,7 +76,12 @@ const Shorts = ({ cards }: Props): React.JSX.Element => {
           <Col>
             <Row
               className='videos'
-              style={{ display: 'flex', flexWrap: 'nowrap', overflow: 'auto' }}
+              style={{
+                display: 'flex',
+                flexWrap: 'nowrap',
+                overflow: 'auto',
+                padding: '0 60px',
+              }}
             >
               {cards.slice(0, 5).map((card) => (
                 <ChannelVideo

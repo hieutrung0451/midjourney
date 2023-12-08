@@ -1,4 +1,3 @@
-import React from 'react';
 import { Menu } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
@@ -35,7 +34,11 @@ const ShortsBar = () => {
       <Menu.Item key='2' className={styles['nav-item']}>
         <PlaySquareOutlined /> Video
       </Menu.Item>
-      <Menu.Item key='3' className={styles['nav-item']}>
+      <Menu.Item
+        key='3'
+        className={styles['nav-item']}
+        onClick={() => navigate('/shorts')}
+      >
         <PlaySquareOutlined /> Shorts
       </Menu.Item>
       <Menu.Item key='4' className={styles['nav-item']}>
