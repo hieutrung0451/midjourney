@@ -47,6 +47,9 @@
 }
 
 .subscribed {
+  position: absolute;
+  left: 200%;
+  top: -10px;
   border-radius: 30px;
   background: linear-gradient(
     180deg,
@@ -139,22 +142,25 @@
   }
 
   .video {
-    width: 336px;
+    width: 100%;
+    margin-left: 0;
   }
 
   .infoContainer {
-    width: 90%;
+    width: 100%;
     margin-bottom: 12px;
+    margin-left: 0;
   }
 
   .detailList {
     width: 96%;
+    margin-left: 6px;
   }
 
   .subscribed {
     width: 166%;
     position: absolute;
-    left: 49%;
+    left: 80%;
     top: -44px;
   }
 

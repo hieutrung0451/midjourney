@@ -4,6 +4,12 @@
   margin-top: -16px;
 }
 
+.btn-group {
+  .btn-camera {
+    margin-right: 12px;
+  }
+}
+
 @media only screen and (max-width: 500px) {
   .avatar {
     margin-top: -34px;
@@ -16,9 +22,4 @@
 }
 
 @media only screen and (max-width: 900px) {
-  .avatar {
-  }
-
-  .btn-group {
-  }
 }

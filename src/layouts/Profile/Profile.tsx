@@ -16,11 +16,13 @@ function Profile() {
           type='text'
           icon={<HiOutlineVideoCamera color='#999999' size='24px' />}
           size={size}
+          className={styles['btn-camera']}
         />
         <Button
           type='text'
           icon={<IoNotificationsOutline color='#999999' size='24px' />}
           size={size}
+          className={styles['btn-notification']}
         />
       </div>
 

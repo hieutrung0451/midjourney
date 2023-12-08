@@ -36,6 +36,10 @@
   }
 }
 
+.card__item {
+  padding: 12px;
+}
+
 // .card:hover {
 //   width: 360px;
 //   height: 400px;
@@ -44,13 +48,27 @@
 //   background-color: #4c489c;
 // }
 
+@media only screen and (max-width: 500px) {
+  .card {
+    flex: 0 0 auto;
+    .videoTime {
+      position: absolute;
+      top: 165px;
+    }
+  }
+}
+
 @media only screen and (max-width: 900px) and (min-width: 501px) {
   .card {
     flex: 0 0 auto;
     .videoTime {
       position: absolute;
-      top: 112px;
+      top: 140px;
       flex: 0 0 auto;
     }
+  }
+
+  .card__item {
+    padding: 48px 12px 40px 65px;
   }
 }

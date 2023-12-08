@@ -1,13 +1,9 @@
 .card {
   background-color: #1d1c34;
-  background: linear-gradient(
-    180deg,
-    rgba(72, 49, 157, 0.2) 18.75%,
-    rgba(72, 49, 157, 0) 100%
-  );
+  background: linear-gradient(180deg, rgba(72, 49, 157, 0.2) 18.75%, rgba(72, 49, 157, 0) 100%);
   border: 1px solid rgba(72, 49, 157, 0.2);
   border-bottom: none;
-  color: '#fff';
+  color: "#fff";
 }
 .card .videoTime {
   position: absolute;
@@ -32,14 +28,29 @@
   font-size: 13px;
 }
 
+.card__item {
+  padding: 12px;
+}
+
+@media only screen and (max-width: 500px) {
+  .card {
+    flex: 0 0 auto;
+  }
+  .card .videoTime {
+    position: absolute;
+    top: 165px;
+  }
+}
 @media only screen and (max-width: 900px) and (min-width: 501px) {
   .card {
     flex: 0 0 auto;
   }
-
   .card .videoTime {
     position: absolute;
-    top: 112px;
+    top: 140px;
     flex: 0 0 auto;
   }
-} /*# sourceMappingURL=CardItem.module.css.map */
+  .card__item {
+    padding: 48px 12px 40px 65px;
+  }
+}/*# sourceMappingURL=CardItem.module.css.map */

@@ -34,10 +34,11 @@ const Cards = ({ cards, search }: Props): React.JSX.Element => {
   return (
     <Row
       // style={{ marginRight: '0px', padding: '40px' }}
+      // style={{ padding: '48px 12px 40px 65px' }}
       className={styles.cards}
     >
       {filteredList(cards, search).map((card) => (
-        <Col xs={24} xl={8} md={8} style={{ padding: '12px' }}>
+        <Col xs={24} xl={8} md={11} className={styles.card__item}>
           <Card
             key={card.id}
             id={card.id}
