@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Row, Col, Card, Button, Avatar, Radio } from 'antd';
 import {
@@ -31,24 +31,26 @@ interface Props {
 const DetailInfo = ({ film }: Props) => {
   const navigate = useNavigate();
 
-  const options = [
-    { label: [<LikeOutlined />, ' 299'], value: '1' },
-    { label: <DislikeOutlined />, value: '2' },
-    { label: 'Share', value: '3' },
-    { label: <EllipsisOutlined />, value: '4' },
-  ];
+  useEffect(() => {},)
 
-  const calculatorDate = (dateNow: string, createAt: string) => {
-    const date_Now: Date = new Date(dateNow);
-    const create_At: Date = new Date(createAt);
+  // const options = [
+  //   { label: [<LikeOutlined />, ' 299'], value: '1' },
+  //   { label: <DislikeOutlined />, value: '2' },
+  //   { label: 'Share', value: '3' },
+  //   { label: <EllipsisOutlined />, value: '4' },
+  // ];
 
-    const month_Between = date_Now.getMonth() - create_At.getMonth();
-    const year_Between = date_Now.getFullYear() - create_At.getFullYear();
+  // const calculatorDate = (dateNow: string, createAt: string) => {
+  //   const date_Now: Date = new Date(dateNow);
+  //   const create_At: Date = new Date(createAt);
 
-    const result = month_Between + year_Between * 12;
+  //   const month_Between = date_Now.getMonth() - create_At.getMonth();
+  //   const year_Between = date_Now.getFullYear() - create_At.getFullYear();
 
-    return result;
-  };
+  //   const result = month_Between + year_Between * 12;
+
+  //   return result;
+  // };
 
   return (
     <Row className={styles.infoContainer}>

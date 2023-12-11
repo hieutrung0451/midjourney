@@ -7,7 +7,7 @@ import {
   useLocation,
 } from 'react-router-dom';
 
-import { Films } from './services/api';
+import { Films } from './services/filmApi';
 
 import Home from './pages/Home/Home';
 import Detail from './pages/Detail/Detail';
@@ -27,19 +27,23 @@ const App = (): React.JSX.Element => {
   const [search, setSearch] = useState<string>('');
   const { pathname } = useLocation();
   const [idParams, setIdParams] = useState<string>();
-  const [error, setError] = useState<boolean>(false);
+  const [error, setError] = useState<string>('');
+  const [errorState, setErrorState] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     Films.getFilms()
       .then((data) => {
-        setFilms(data.results);
+        console.log(data.data.results);
+
+        setFilms(data.data.results);
         setLoading(false);
       })
       .catch((err) => {
-        setError(!error);
+        console.log(err.message);
+        setErrorState(true);
+        setError(err.message);
       });
-
     // Films.getFilm(1)
     //   .then((data) => {
     //     console.log(data);
@@ -47,7 +51,7 @@ const App = (): React.JSX.Element => {
     //   .catch((err) => {
     //     console.log(err);
     //   });
-  }, [films, setFilms, loading]);
+  }, [Films]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -69,15 +73,22 @@ const App = (): React.JSX.Element => {
               <Home
                 films={films}
                 search={search}
-                error={error}
                 loading={loading}
+                error={error}
+                errorState={errorState}
               />
             }
           />
           <Route
             path='/detail/:id'
             element={
-              <Detail films={films} getParams={getParams} loading={loading} />
+              <Detail
+                films={films}
+                getParams={getParams}
+                loading={loading}
+                error={error}
+                errorState={errorState}
+              />
             }
           />
           <Route path='/shorts' element={<Shorts films={films} />} />

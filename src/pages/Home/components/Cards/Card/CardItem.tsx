@@ -77,9 +77,9 @@ const CardItem = ({
           <h4>{title}</h4>
           <div className={styles.userInfo}>
             <div>{channel_name}</div>
-            <span>{view}</span>
+            <span>100.000 views</span>
             <span> - </span>
-            <span>{monthBetween} month ago</span>
+            <span>2 month ago</span>
           </div>
         </div>
       </Flex>

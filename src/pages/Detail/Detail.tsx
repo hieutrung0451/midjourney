@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-import { Layout, Flex, Spin } from 'antd';
+import { Layout, Flex, Spin, Alert } from 'antd';
 import { useParams } from 'react-router-dom';
 import { LoadingOutlined } from '@ant-design/icons';
 
-import { Films } from '../../services/api';
+import { Films } from '../../services/filmApi';
 
 import DetailList from './components/DetailList/DetailList';
 
@@ -18,11 +18,19 @@ import { IFilm } from '../../types/schema';
 interface Props {
   films: IFilm[];
   loading: boolean;
+  error: string;
+  errorState: boolean;
 
   getParams: (id: string) => void;
 }
 
-const Detail = ({ films, getParams, loading }: Props): React.JSX.Element => {
+const Detail = ({
+  films,
+  getParams,
+  loading,
+  error,
+  errorState,
+}: Props): React.JSX.Element => {
   const { id } = useParams<{ id: string }>();
   const [film, setFilm] = useState<IFilm>();
 
@@ -39,11 +47,10 @@ const Detail = ({ films, getParams, loading }: Props): React.JSX.Element => {
     id &&
       Films.getFilm(+id)
         .then((data) => {
-          console.log(data);
           // console.log(findCardsElementById(data, +id));
 
           // id && setCard(findCardsElementById(cards, +id));
-          setFilm(data);
+          setFilm(data.data);
         })
         .catch((err) => {
           console.log(err);
@@ -61,6 +68,19 @@ const Detail = ({ films, getParams, loading }: Props): React.JSX.Element => {
       <Layout.Content className={styles.content}>
         <Flex className={styles.detailFlex}>
           <DetailVideo film={film} />
+          {errorState && (
+            <Alert
+              message={error}
+              type='error'
+              style={{
+                position: 'absolute',
+                right: '32px',
+                top: '164px',
+              }}
+              showIcon
+              closable
+            />
+          )}
           {loading && (
             <Spin
               indicator={<LoadingOutlined style={{ fontSize: 80 }} spin />}

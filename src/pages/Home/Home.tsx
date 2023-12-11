@@ -22,15 +22,35 @@ import styles from './styles/Home.module.css';
 interface Props {
   films: IFilm[];
   search: string;
-  error: boolean;
+  error: string;
+  errorState: boolean;
   loading: boolean;
 }
 
-const Home = ({ films, search, error, loading }: Props): React.JSX.Element => {
+const Home = ({
+  films,
+  search,
+  loading,
+  error,
+  errorState,
+}: Props): React.JSX.Element => {
   return (
     <Layout.Content className={styles.content}>
-      {error && <Alert message='Error Text' type='error' />}
       <Cards films={films} search={search} />
+      {errorState && (
+        <Alert
+          message={error}
+          type='error'
+          style={{
+            width: '23%',
+            float: 'right',
+            marginRight: '22px',
+            marginTop: '24px',
+          }}
+          showIcon
+          closable
+        />
+      )}
 
       {loading && (
         <Spin
