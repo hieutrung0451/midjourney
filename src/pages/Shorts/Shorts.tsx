@@ -6,25 +6,27 @@ import ShortsBar from './components/ShortsBar/ShortsBar';
 import MemberList from './components/MemberList/MemberList';
 import ChannelVideo from './components/ChannelVideos/ChannelVideo';
 
+import { IFilm } from '../../types/schema';
+
 import styles from './styles/Shorts.module.css';
 
-interface Card {
-  id: number;
-  title: string;
-  channel_name: string;
-  image: string;
-  channel_avatar: string;
-  dateNow: string;
-  createAt: string;
-  view: string;
-  videoTime: string;
-}
+// interface Card {
+//   id: number;
+//   title: string;
+//   channel_name: string;
+//   image: string;
+//   channel_avatar: string;
+//   dateNow: string;
+//   createAt: string;
+//   view: string;
+//   videoTime: string;
+// }
 
 interface Props {
-  cards: Card[];
+  films: IFilm[];
 }
 
-const Shorts = ({ cards }: Props): React.JSX.Element => {
+const Shorts = ({ films }: Props): React.JSX.Element => {
   return (
     <Layout>
       <Layout.Content className={styles.content}>
@@ -83,17 +85,17 @@ const Shorts = ({ cards }: Props): React.JSX.Element => {
                 padding: '0 60px',
               }}
             >
-              {cards.slice(0, 5).map((card) => (
+              {films.slice(0, 5).map((film) => (
                 <ChannelVideo
-                  id={card.id}
-                  key={card.id}
-                  title={card.title}
-                  channel_name={card.channel_name}
-                  view={card.view}
-                  dateNow={card.dateNow}
-                  createAt={card.createAt}
-                  image={card.image}
-                  videoTime={card.videoTime}
+                  key={film.episode_id}
+                  id={film.episode_id}
+                  title={film.title}
+                  channel_name={film.director}
+                  createAt={film.created}
+                  dateNow={film.edited}
+                  view={film.title}
+                  image={film.title}
+                  videoTime={film.created}
                 />
               ))}
             </Row>

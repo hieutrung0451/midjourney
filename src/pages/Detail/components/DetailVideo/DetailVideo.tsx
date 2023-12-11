@@ -4,29 +4,31 @@ import { Card } from 'antd';
 import Video from './Video';
 import DetailInfo from './DetailInfo';
 
+import { IFilm } from '../../../../types/schema';
+
 import styles from '../../styles/Detail.module.css';
 
-interface Card {
-  id?: number;
-  title?: string;
-  channel_name?: string;
-  image?: string;
-  channel_avatar?: string;
-  dateNow: string;
-  createAt: string;
-  view?: string;
-  videoTime?: string;
-}
+// interface Card {
+//   id?: number;
+//   title?: string;
+//   channel_name?: string;
+//   image?: string;
+//   channel_avatar?: string;
+//   dateNow: string;
+//   createAt: string;
+//   view?: string;
+//   videoTime?: string;
+// }
 
 interface Props {
-  card?: Card;
+  film?: IFilm;
 }
 
-const DetailVideo = ({ card }: Props): React.JSX.Element => {
+const DetailVideo = ({ film }: Props): React.JSX.Element => {
   return (
     <div className={styles.user}>
-      <Video card={card} />
-      <DetailInfo card={card} />
+      <Video film={film} />
+      <DetailInfo film={film} />
     </div>
   );
 };

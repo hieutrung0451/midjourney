@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Avatar, Flex, Space } from 'antd';
+import { Card, Avatar, Flex } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
 import styles from './CardItem.module.css';
@@ -48,7 +48,12 @@ const CardItem = ({
 
   return (
     <Card
-      cover={<img src={image} alt='this is a cover' />}
+      cover={
+        <img
+          src='https://lofigirl.com/wp-content/uploads/2022/10/Hush.png'
+          alt='this is a cover'
+        />
+      }
       className={styles.card}
       bordered={false}
       hoverable
@@ -57,10 +62,15 @@ const CardItem = ({
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
       }}
     >
-      <div className={styles.videoTime}>{videoTime}</div>
+      {/* <div className={styles.videoTime}>4:00</div> */}
       <Flex>
         <Avatar
-          src={<img src={channel_avatar} alt='avatar' />}
+          src={
+            <img
+              src='https://upload.wikimedia.org/wikipedia/vi/2/23/Lofi_girl_logo.jpg'
+              alt='avatar'
+            />
+          }
           style={{ width: '16%', height: '38%' }}
         />
         <div className={styles.info}>

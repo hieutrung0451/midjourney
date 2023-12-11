@@ -1,30 +1,48 @@
-import { Layout } from 'antd';
+import { Layout, Alert, Spin } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
 
 import Cards from './components/Cards/Cards';
 
+import { IFilm } from '../../types/schema';
+
 import styles from './styles/Home.module.css';
 
-interface Card {
-  id: number;
-  title: string;
-  channel_name: string;
-  image: string;
-  channel_avatar: string;
-  dateNow: string;
-  createAt: string;
-  view: string;
-  videoTime: string;
-}
+// interface Card {
+//   id: number;
+//   title: string;
+//   channel_name: string;
+//   image: string;
+//   channel_avatar: string;
+//   dateNow: string;
+//   createAt: string;
+//   view: string;
+//   videoTime: string;
+// }
 
 interface Props {
-  cards: Card[];
+  films: IFilm[];
   search: string;
+  error: boolean;
+  loading: boolean;
 }
 
-const Home = ({ cards, search }: Props): React.JSX.Element => {
+const Home = ({ films, search, error, loading }: Props): React.JSX.Element => {
   return (
     <Layout.Content className={styles.content}>
-      <Cards cards={cards} search={search} />
+      {error && <Alert message='Error Text' type='error' />}
+      <Cards films={films} search={search} />
+
+      {loading && (
+        <Spin
+          indicator={<LoadingOutlined style={{ fontSize: 80 }} spin />}
+          style={{
+            height: '50vh',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        />
+      )}
     </Layout.Content>
   );
 };

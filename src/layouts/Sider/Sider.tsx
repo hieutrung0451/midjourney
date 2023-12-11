@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Menu, MenuProps, Dropdown, Space } from 'antd';
+import { Menu, MenuProps } from 'antd';
 import { IoHome } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import { CiYoutube } from 'react-icons/ci';
@@ -8,6 +8,7 @@ import {
   ClockCircleOutlined,
   DownloadOutlined,
   UnorderedListOutlined,
+  YoutubeOutlined,
 } from '@ant-design/icons';
 import { IoIosArrowDown } from 'react-icons/io';
 import {
@@ -15,8 +16,6 @@ import {
   MdOutlineSubscriptions,
   MdMusicVideo,
 } from 'react-icons/md';
-
-import logo from '../../assets/Papaya.svg';
 
 import styles from './styles/Sider.module.css';
 
@@ -40,7 +39,7 @@ function getItem(
 
 const items: MenuProps['items'] = [
   getItem(null, 'menu', null, [
-    getItem('Home', '', [
+    getItem('Home', 'home', [
       <IoHome style={{ marginRight: '10px' }} />,
       <Link to='/' />,
     ]),
@@ -57,7 +56,7 @@ const items: MenuProps['items'] = [
       [
         getItem('Library', 'library', <MdOutlineVideoLibrary />),
         getItem('History', 'history', <HistoryOutlined />),
-        getItem('Your Videos', 'yourVideos'),
+        getItem('Your Videos', 'yourVideos', <YoutubeOutlined />),
         getItem('Watch Later', 'watchLater', <ClockCircleOutlined />),
         getItem('Downloads', 'downloads', <DownloadOutlined />),
         getItem('Show More', 'showMore', <IoIosArrowDown />),
@@ -69,10 +68,10 @@ const items: MenuProps['items'] = [
       'g2',
       null,
       [
-        getItem('DesignCode', 'designCode'),
-        getItem('Figma', 'figma'),
-        getItem('Sketch', 'sketch'),
-        getItem('spline', 'spline'),
+        getItem('DesignCode', 'designCode', null),
+        getItem('Figma', 'figma', null),
+        getItem('Sketch', 'sketch', null),
+        getItem('spline', 'spline', null),
       ],
       'group'
     ),
@@ -91,6 +90,7 @@ const Sider = (): React.JSX.Element => {
       {/* <img src={logo} alt='logo' /> */}
 
       <Menu
+        expandIcon={<UnorderedListOutlined />}
         defaultSelectedKeys={['1']}
         defaultOpenKeys={['sub1']}
         mode='inline'

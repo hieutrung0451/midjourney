@@ -8,25 +8,27 @@ import {
   EllipsisOutlined,
 } from '@ant-design/icons';
 
+import { IFilm } from '../../../../types/schema';
+
 import styles from '../../styles/Detail.module.css';
 
-interface Card {
-  id?: number;
-  title?: string;
-  channel_name?: string;
-  image?: string;
-  channel_avatar?: string;
-  dateNow: string;
-  createAt: string;
-  view?: string;
-  videoTime?: string;
-}
+// interface Card {
+//   id?: number;
+//   title?: string;
+//   channel_name?: string;
+//   image?: string;
+//   channel_avatar?: string;
+//   dateNow: string;
+//   createAt: string;
+//   view?: string;
+//   videoTime?: string;
+// }
 
 interface Props {
-  card?: Card;
+  film?: IFilm;
 }
 
-const DetailInfo = ({ card }: Props) => {
+const DetailInfo = ({ film }: Props) => {
   const navigate = useNavigate();
 
   const options = [
@@ -52,7 +54,7 @@ const DetailInfo = ({ card }: Props) => {
     <Row className={styles.infoContainer}>
       <Row style={{ width: '100%' }}>
         <Col>
-          <h2>{card?.title}</h2>
+          <h2>{film?.title}</h2>
         </Col>
       </Row>
       <Row>
@@ -60,8 +62,8 @@ const DetailInfo = ({ card }: Props) => {
           <Avatar
             src={
               <img
-                src={card?.channel_avatar}
-                alt={card?.title}
+                src='https://upload.wikimedia.org/wikipedia/vi/2/23/Lofi_girl_logo.jpg'
+                alt={film?.title}
                 style={{
                   width: '100%',
                   height: '100%',
@@ -73,7 +75,7 @@ const DetailInfo = ({ card }: Props) => {
           />
         </Col>
         <Col className={styles.info}>
-          <p>{card?.channel_name}</p>
+          <p>{film?.director}</p>
           <p>200k subscribers</p>
         </Col>
 
@@ -98,18 +100,12 @@ const DetailInfo = ({ card }: Props) => {
 
       <Col>
         <Row className={styles.desc}>
-          <div>{card?.view} views </div>
+          <div>{film?.title} views </div>
           <div className={styles.between}> - </div>
           <div>1 month</div>
         </Row>
 
-        <p className={styles.detail}>
-          Celestial Alignment is bringing you a calming and reassuring treatment
-          with his latest release “Precious Moments”. Beautiful slow progressing
-          guitars act as an aid to sooth your mind after a long day. Through the
-          cold wilderness, you’ve finally found a warm refuge under the northern
-          lights and night stars – come in and rest, you’ve earned it 😌
-        </p>
+        <p className={styles.detail}>{film?.opening_crawl}</p>
       </Col>
       <Row>Show more</Row>
     </Row>

@@ -46,11 +46,17 @@ const ChannelVideo = ({
   return (
     <Card
       className={styles.channelVideo}
-      cover={<img src={image} alt='this is video' className={styles.image} />}
+      cover={
+        <img
+          src='https://lofigirl.com/wp-content/uploads/2022/10/Hush.png'
+          alt='this is video'
+          className={styles.image}
+        />
+      }
       hoverable
       onClick={() => navigate(`/detail/${id}`)}
     >
-      <div className={styles.videoTime}>{videoTime}</div>
+      {/* <div className={styles.videoTime}>{videoTime}</div> */}
       <Flex>
         <div className={styles.info}>
           <h4>{title}</h4>

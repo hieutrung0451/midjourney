@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-import { Layout, Flex } from 'antd';
+import { Layout, Flex, Spin } from 'antd';
 import { useParams } from 'react-router-dom';
+import { LoadingOutlined } from '@ant-design/icons';
+
+import { Films } from '../../services/api';
 
 import DetailList from './components/DetailList/DetailList';
 
@@ -10,39 +13,66 @@ import DetailVideo from './components/DetailVideo/DetailVideo';
 import styles from './styles/Detail.module.css';
 
 import { ICard } from '../../types/schema';
+import { IFilm } from '../../types/schema';
 
 interface Props {
-  cards: ICard[];
+  films: IFilm[];
+  loading: boolean;
 
   getParams: (id: string) => void;
 }
 
-const Detail = ({ cards, getParams }: Props): React.JSX.Element => {
+const Detail = ({ films, getParams, loading }: Props): React.JSX.Element => {
   const { id } = useParams<{ id: string }>();
-  const [card, setCard] = useState<ICard>();
+  const [film, setFilm] = useState<IFilm>();
 
   useEffect(() => {
-    // 👇️ scroll to top on page load
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, []);
 
-  useEffect(() => {
-    id && setCard(findCardsElementById(cards, +id));
-    id && getParams(id);
-  }, [id, cards]);
+  // useEffect(() => {
+  //   id && setCard(findCardsElementById(cards, +id));
+  //   id && getParams(id);
+  // }, [id, cards]);
 
-  const findCardsElementById = (cards: ICard[], id: number) => {
-    return cards.find((card) => {
-      return card.id === id;
-    });
-  };
+  useEffect(() => {
+    id &&
+      Films.getFilm(+id)
+        .then((data) => {
+          console.log(data);
+          // console.log(findCardsElementById(data, +id));
+
+          // id && setCard(findCardsElementById(cards, +id));
+          setFilm(data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+  }, [id]);
+
+  // const findCardsElementById = (cards: IFilm[], id: number) => {
+  //   return cards.find((card) => {
+  //     return card.episode_id === id;
+  //   });
+  // };
 
   return (
     <Layout>
       <Layout.Content className={styles.content}>
         <Flex className={styles.detailFlex}>
-          <DetailVideo card={card} />
-          <DetailList cards={cards} />
+          <DetailVideo film={film} />
+          {loading && (
+            <Spin
+              indicator={<LoadingOutlined style={{ fontSize: 80 }} spin />}
+              style={{
+                height: '50vh',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            />
+          )}
+          <DetailList films={films} />
         </Flex>
       </Layout.Content>
     </Layout>
