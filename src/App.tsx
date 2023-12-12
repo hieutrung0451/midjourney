@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import { Layout, Alert } from 'antd';
 import {
   BrowserRouter as Router,
@@ -7,20 +8,19 @@ import {
   useLocation,
 } from 'react-router-dom';
 
-import { Films } from './services/filmApi';
+import Sider from './layouts/Sider/Sider';
+import Header from './layouts/Header/Header';
+import Footer from './layouts/Footer/Footer';
 
 import Home from './pages/Home/Home';
 import Detail from './pages/Detail/Detail';
 import Shorts from './pages/Shorts/Shorts';
 
-import styles from './App.module.css';
+import { Films } from './services/filmApi';
 
 import { IFilm } from './types/schema';
-import { ICard } from './types/schema';
 
-import Sider from './layouts/Sider/Sider';
-import Header from './layouts/Header/Header';
-import Footer from './layouts/Footer/Footer';
+import styles from './App.module.css';
 
 const App = (): React.JSX.Element => {
   const [films, setFilms] = useState<IFilm[]>([]);
@@ -44,13 +44,6 @@ const App = (): React.JSX.Element => {
         setErrorState(true);
         setError(err.message);
       });
-    // Films.getFilm(1)
-    //   .then((data) => {
-    //     console.log(data);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
   }, [Films]);
 
   useEffect(() => {

@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Layout, Col, Row, Avatar, Button, Card } from 'antd';
 import { CaretRightOutlined, BellOutlined } from '@ant-design/icons';
 
 import ShortsBar from './components/ShortsBar/ShortsBar';
 import MemberList from './components/MemberList/MemberList';
 import ChannelVideo from './components/ChannelVideos/ChannelVideo';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchFilms } from '../../redux/slice/filmsSlice';
+import { ThunkDispatch } from '@reduxjs/toolkit';
+import { RootState } from '../../redux/store';
 
 import { IFilm } from '../../types/schema';
 
@@ -27,6 +31,13 @@ interface Props {
 }
 
 const Shorts = ({ films }: Props): React.JSX.Element => {
+  const state = useSelector((state: RootState) => state);
+  const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
+
+  useEffect(() => {
+    dispatch(fetchFilms());
+  }, [dispatch]);
+
   return (
     <Layout>
       <Layout.Content className={styles.content}>
@@ -85,7 +96,7 @@ const Shorts = ({ films }: Props): React.JSX.Element => {
                 padding: '0 60px',
               }}
             >
-              {films.slice(0, 5).map((film) => (
+              {state.film.films.slice(0, 5).map((film) => (
                 <ChannelVideo
                   key={film.episode_id}
                   id={film.episode_id}

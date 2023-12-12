@@ -8,6 +8,11 @@ import {
   EllipsisOutlined,
 } from '@ant-design/icons';
 
+import { fetchFilm } from '../../../../redux/slice/filmsSlice';
+import { ThunkDispatch } from '@reduxjs/toolkit';
+import { RootState } from '../../../../redux/store';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { IFilm } from '../../../../types/schema';
 
 import styles from '../../styles/Detail.module.css';
@@ -30,8 +35,11 @@ interface Props {
 
 const DetailInfo = ({ film }: Props) => {
   const navigate = useNavigate();
+  const state = useSelector((state: RootState) => state);
 
-  useEffect(() => {},)
+  useEffect(() => {
+    console.log(state.film.film);
+  });
 
   // const options = [
   //   { label: [<LikeOutlined />, ' 299'], value: '1' },

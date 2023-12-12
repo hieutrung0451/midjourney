@@ -1,26 +1,32 @@
 import axios, { AxiosResponse } from 'axios';
 
+const requestTime = 15000;
+const badRequest = 400;
+const unauthorized = 401;
+const notFound = 404;
+const internalServerError = 500;
+
 export const api = axios.create({
   baseURL: 'https://swapi.dev/api/',
-  timeout: 15000,
+  timeout: requestTime,
 });
 
 axios.interceptors.response.use(
-  (response: AxiosResponse) => {
+  (response: AxiosResponse) => {  
     return response.data;
   },
   (error) => {
     switch (error.response.status) {
-      case 400:
+      case badRequest:
         console.log('400 Bad Request');
         break;
-      case 401:
+      case unauthorized:
         console.log('401 Unauthorized');
         break;
-      case 404:
+      case notFound:
         console.log('404 Not Found');
         break;
-      case 500:
+      case internalServerError:
         console.log('500 Internal Server Error');
         break;
     }

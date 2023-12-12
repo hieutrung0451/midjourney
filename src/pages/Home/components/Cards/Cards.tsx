@@ -2,6 +2,11 @@ import { useEffect, useState } from 'react';
 
 import { Row, Col } from 'antd';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchFilms } from '../../../../redux/slice/filmsSlice';
+import { ThunkDispatch } from '@reduxjs/toolkit';
+import { RootState } from '../../../../redux/store';
+
 import Card from './Card/CardItem';
 
 import { IFilm } from '../../../../types/schema';
@@ -26,6 +31,13 @@ interface Props {
 }
 
 const Cards = ({ films, search }: Props): React.JSX.Element => {
+  const state = useSelector((state: RootState) => state);
+  const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
+
+  useEffect(() => {
+    dispatch(fetchFilms());
+  }, [dispatch]);
+
   const bySearch = (card: IFilm, search: string) => {
     if (search !== '') {
       return card.title.toLowerCase().includes(search.toLowerCase());
@@ -33,7 +45,7 @@ const Cards = ({ films, search }: Props): React.JSX.Element => {
   };
 
   const filteredList = (cards: IFilm[], search: string) => {
-    return cards.filter((card) => bySearch(card, search));
+    return state.film.films.filter((card) => bySearch(card, search));
   };
 
   return (
