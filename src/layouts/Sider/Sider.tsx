@@ -26,7 +26,7 @@ function getItem(
   key: React.Key,
   icon?: React.ReactNode,
   children?: MenuItem[],
-  type?: 'group'
+  type?: 'group',
 ): MenuItem {
   return {
     key,
@@ -41,11 +41,11 @@ const items: MenuProps['items'] = [
   getItem(null, 'menu', null, [
     getItem('Home', 'home', [
       <IoHome style={{ marginRight: '10px' }} />,
-      <Link to='/' />,
+      <Link to="/" />,
     ]),
     getItem('Shorts', 'shorts', [
       <CiYoutube style={{ marginRight: '10px' }} />,
-      <Link to='./shorts' />,
+      <Link to="./shorts" />,
     ]),
     getItem('Subscriptions', 'subscriptions', <MdOutlineSubscriptions />),
     getItem('Papaya Music', 'music', <MdMusicVideo />),
@@ -61,7 +61,7 @@ const items: MenuProps['items'] = [
         getItem('Downloads', 'downloads', <DownloadOutlined />),
         getItem('Show More', 'showMore', <IoIosArrowDown />),
       ],
-      'group'
+      'group',
     ),
     getItem(
       'SUBSCRIPTIONS',
@@ -73,34 +73,26 @@ const items: MenuProps['items'] = [
         getItem('Sketch', 'sketch', null),
         getItem('spline', 'spline', null),
       ],
-      'group'
+      'group',
     ),
   ]),
 ];
 
-// interface Props {
-//   abc: string;
-// }
-
-// const Sider = ({ abc }: Props): React.JSX.Element => {
-
-const Sider = (): React.JSX.Element => {
+function Sider(): React.JSX.Element {
   return (
     <div className={styles.sider}>
-      {/* <img src={logo} alt='logo' /> */}
-
       <Menu
         expandIcon={<UnorderedListOutlined />}
         defaultSelectedKeys={['1']}
         defaultOpenKeys={['sub1']}
-        mode='inline'
+        mode="inline"
         items={items}
-        theme='dark'
+        theme="dark"
         className={styles.menu}
       />
     </div>
   );
-};
+}
 
 // const Sider = (): React.JSX.Element => {
 //   return (

@@ -1,36 +1,18 @@
 import React, { useEffect } from 'react';
-import { Layout, Col, Row, Avatar, Button, Card } from 'antd';
+import { Layout, Col, Row, Avatar, Button } from 'antd';
 import { CaretRightOutlined, BellOutlined } from '@ant-design/icons';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { ThunkDispatch } from '@reduxjs/toolkit';
 import ShortsBar from './components/ShortsBar/ShortsBar';
 import MemberList from './components/MemberList/MemberList';
 import ChannelVideo from './components/ChannelVideos/ChannelVideo';
-import { useDispatch, useSelector } from 'react-redux';
 import { fetchFilms } from '../../redux/slice/filmsSlice';
-import { ThunkDispatch } from '@reduxjs/toolkit';
 import { RootState } from '../../redux/store';
-
-import { IFilm } from '../../types/schema';
 
 import styles from './styles/Shorts.module.css';
 
-// interface Card {
-//   id: number;
-//   title: string;
-//   channel_name: string;
-//   image: string;
-//   channel_avatar: string;
-//   dateNow: string;
-//   createAt: string;
-//   view: string;
-//   videoTime: string;
-// }
-
-interface Props {
-  films: IFilm[];
-}
-
-const Shorts = ({ films }: Props): React.JSX.Element => {
+function Shorts(): React.JSX.Element {
   const state = useSelector((state: RootState) => state);
   const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
 
@@ -115,6 +97,6 @@ const Shorts = ({ films }: Props): React.JSX.Element => {
       </Layout.Content>
     </Layout>
   );
-};
+}
 
 export default Shorts;

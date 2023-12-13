@@ -16,7 +16,7 @@ interface Props {
   videoTime: string;
 }
 
-const CardItem = ({
+function CardItem({
   id,
   title,
   channel_name,
@@ -26,7 +26,7 @@ const CardItem = ({
   createAt,
   view,
   videoTime,
-}: Props): React.JSX.Element => {
+}: Props): React.JSX.Element {
   const [monthBetween, setMonthBetween] = useState<string>('');
   const navigate = useNavigate();
 
@@ -48,12 +48,12 @@ const CardItem = ({
 
   return (
     <Card
-      cover={
+      cover={(
         <img
-          src='https://lofigirl.com/wp-content/uploads/2022/10/Hush.png'
-          alt='this is a cover'
+          src="https://lofigirl.com/wp-content/uploads/2022/10/Hush.png"
+          alt="this is a cover"
         />
-      }
+      )}
       className={styles.card}
       bordered={false}
       hoverable
@@ -65,12 +65,12 @@ const CardItem = ({
       {/* <div className={styles.videoTime}>4:00</div> */}
       <Flex>
         <Avatar
-          src={
+          src={(
             <img
-              src='https://upload.wikimedia.org/wikipedia/vi/2/23/Lofi_girl_logo.jpg'
-              alt='avatar'
+              src="https://upload.wikimedia.org/wikipedia/vi/2/23/Lofi_girl_logo.jpg"
+              alt="avatar"
             />
-          }
+          )}
           style={{ width: '16%', height: '38%' }}
         />
         <div className={styles.info}>
@@ -85,6 +85,6 @@ const CardItem = ({
       </Flex>
     </Card>
   );
-};
+}
 
 export default CardItem;

@@ -11,7 +11,7 @@ interface Props {
   onSearch: (filtered: string) => void;
 }
 
-const Header = ({ onSearch }: Props): React.JSX.Element => {
+function Header({ onSearch }: Props): React.JSX.Element {
   const [visible, setVisible] = useState<boolean>(false);
 
   const handleSearch = (text: string) => {
@@ -21,7 +21,7 @@ const Header = ({ onSearch }: Props): React.JSX.Element => {
 
   return (
     <Layout.Header className={styles.header}>
-      <Flex className={styles.container} justify='space-between'>
+      <Flex className={styles.container} justify="space-between">
         <SearchBar onSearch={handleSearch} visible={visible} />
         <Profile />
       </Flex>
@@ -30,6 +30,6 @@ const Header = ({ onSearch }: Props): React.JSX.Element => {
       </Flex>
     </Layout.Header>
   );
-};
+}
 
 export default Header;

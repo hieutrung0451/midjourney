@@ -37,34 +37,11 @@ const DetailInfo = ({ film }: Props) => {
   const navigate = useNavigate();
   const state = useSelector((state: RootState) => state);
 
-  useEffect(() => {
-    console.log(state.film.film);
-  });
-
-  // const options = [
-  //   { label: [<LikeOutlined />, ' 299'], value: '1' },
-  //   { label: <DislikeOutlined />, value: '2' },
-  //   { label: 'Share', value: '3' },
-  //   { label: <EllipsisOutlined />, value: '4' },
-  // ];
-
-  // const calculatorDate = (dateNow: string, createAt: string) => {
-  //   const date_Now: Date = new Date(dateNow);
-  //   const create_At: Date = new Date(createAt);
-
-  //   const month_Between = date_Now.getMonth() - create_At.getMonth();
-  //   const year_Between = date_Now.getFullYear() - create_At.getFullYear();
-
-  //   const result = month_Between + year_Between * 12;
-
-  //   return result;
-  // };
-
   return (
     <Row className={styles.infoContainer}>
       <Row style={{ width: '100%' }}>
         <Col>
-          <h2>{film?.title}</h2>
+          <h2>{state?.film?.film?.title}</h2>
         </Col>
       </Row>
       <Row>
@@ -73,7 +50,7 @@ const DetailInfo = ({ film }: Props) => {
             src={
               <img
                 src='https://upload.wikimedia.org/wikipedia/vi/2/23/Lofi_girl_logo.jpg'
-                alt={film?.title}
+                alt={state?.film?.film?.title}
                 style={{
                   width: '100%',
                   height: '100%',
@@ -85,7 +62,7 @@ const DetailInfo = ({ film }: Props) => {
           />
         </Col>
         <Col className={styles.info}>
-          <p>{film?.director}</p>
+          <p>{state?.film?.film?.director}</p>
           <p>200k subscribers</p>
         </Col>
 
@@ -110,12 +87,12 @@ const DetailInfo = ({ film }: Props) => {
 
       <Col>
         <Row className={styles.desc}>
-          <div>{film?.title} views </div>
+          <div>{state?.film?.film?.title} views </div>
           <div className={styles.between}> - </div>
           <div>1 month</div>
         </Row>
 
-        <p className={styles.detail}>{film?.opening_crawl}</p>
+        <p className={styles.detail}>{state?.film?.film?.opening_crawl}</p>
       </Col>
       <Row>Show more</Row>
     </Row>

@@ -3,11 +3,9 @@ import { Card } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchFilms } from '../../../../redux/slice/filmsSlice';
 import { ThunkDispatch } from '@reduxjs/toolkit';
+import { fetchFilms } from '../../../../redux/slice/filmsSlice';
 import { RootState } from '../../../../redux/store';
-
-import { IFilm } from '../../../../types/schema';
 
 import styles from '../../styles/Detail.module.css';
 
@@ -23,11 +21,7 @@ import styles from '../../styles/Detail.module.css';
 //   videoTime?: string;
 // }
 
-interface Props {
-  films: IFilm[];
-}
-
-const DetailList = ({ films }: Props): React.JSX.Element => {
+function DetailList(): React.JSX.Element {
   const navigate = useNavigate();
   const state = useSelector((state: RootState) => state);
   const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
@@ -35,18 +29,6 @@ const DetailList = ({ films }: Props): React.JSX.Element => {
   useEffect(() => {
     dispatch(fetchFilms());
   }, [dispatch]);
-
-  // const calculatorDate = (dateNow: string, createAt: string) => {
-  //   const date_Now: Date = new Date(dateNow);
-  //   const create_At: Date = new Date(createAt);
-
-  //   const month_Between = date_Now.getMonth() - create_At.getMonth();
-  //   const year_Between = date_Now.getFullYear() - create_At.getFullYear();
-
-  //   const result = month_Between + year_Between * 12;
-
-  //   return result;
-  // };
 
   return (
     <div className={styles.detailList}>
@@ -67,7 +49,6 @@ const DetailList = ({ films }: Props): React.JSX.Element => {
           hoverable
           onClick={() => navigate(`/detail/${film.episode_id}`)}
         >
-          {/* <div className={styles.videoTime}>{card.created}</div> */}
           <div className={styles.cardInfo}>
             <p>{film.title}</p>
             <div className={styles.channelInfo}>
@@ -83,6 +64,6 @@ const DetailList = ({ films }: Props): React.JSX.Element => {
       ))}
     </div>
   );
-};
+}
 
 export default DetailList;

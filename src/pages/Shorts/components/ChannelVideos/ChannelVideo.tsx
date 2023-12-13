@@ -15,7 +15,7 @@ interface Props {
   videoTime: string;
 }
 
-const ChannelVideo = ({
+function ChannelVideo({
   id,
   title,
   channel_name,
@@ -24,7 +24,7 @@ const ChannelVideo = ({
   createAt,
   view,
   videoTime,
-}: Props) => {
+}: Props) {
   const [monthBetween, setMonthBetween] = useState<string>('');
   const navigate = useNavigate();
 
@@ -46,13 +46,13 @@ const ChannelVideo = ({
   return (
     <Card
       className={styles.channelVideo}
-      cover={
+      cover={(
         <img
-          src='https://lofigirl.com/wp-content/uploads/2022/10/Hush.png'
-          alt='this is video'
+          src="https://lofigirl.com/wp-content/uploads/2022/10/Hush.png"
+          alt="this is video"
           className={styles.image}
         />
-      }
+      )}
       hoverable
       onClick={() => navigate(`/detail/${id}`)}
     >
@@ -64,12 +64,16 @@ const ChannelVideo = ({
             <div>{channel_name}</div>
             <span>{view}</span>
             <span> - </span>
-            <span>{monthBetween} month ago</span>
+            <span>
+              {monthBetween}
+              {' '}
+              month ago
+            </span>
           </div>
         </div>
       </Flex>
     </Card>
   );
-};
+}
 
 export default ChannelVideo;

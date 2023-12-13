@@ -13,14 +13,14 @@ function Profile() {
     <Space size={[20, 16]} wrap>
       <div className={styles['btn-group']}>
         <Button
-          type='text'
-          icon={<HiOutlineVideoCamera color='#999999' size='24px' />}
+          type="text"
+          icon={<HiOutlineVideoCamera color="#999999" size="24px" />}
           size={size}
           className={styles['btn-camera']}
         />
         <Button
-          type='text'
-          icon={<IoNotificationsOutline color='#999999' size='24px' />}
+          type="text"
+          icon={<IoNotificationsOutline color="#999999" size="24px" />}
           size={size}
           className={styles['btn-notification']}
         />
@@ -29,7 +29,7 @@ function Profile() {
       <Avatar
         className={styles.avatar}
         icon={
-          <img src='https://upload.wikimedia.org/wikipedia/vi/2/23/Lofi_girl_logo.jpg' />
+          <img src="https://upload.wikimedia.org/wikipedia/vi/2/23/Lofi_girl_logo.jpg" />
         }
       >
         A

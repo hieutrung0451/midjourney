@@ -10,20 +10,20 @@ interface Props {
   onSearch: (filtered: string) => void;
 }
 
-const SearchBar = ({ onSearch, visible }: Props): React.JSX.Element => {
+function SearchBar({ onSearch, visible }: Props): React.JSX.Element {
   const [size, setSize] = useState<SizeType>('middle');
 
   return (
     <div className={styles.container}>
       <Input
-        type='search'
+        type="search"
         className={styles['input-search']}
         style={{ color: '#fff' }}
-        placeholder='Explore'
+        placeholder="Explore"
         onChange={(e) => onSearch(e.target.value)}
       />
       <Button
-        shape='circle'
+        shape="circle"
         icon={<AudioOutlined />}
         size={size}
         className={styles.mic}
@@ -45,6 +45,6 @@ const SearchBar = ({ onSearch, visible }: Props): React.JSX.Element => {
       )} */}
     </div>
   );
-};
+}
 
 export default SearchBar;

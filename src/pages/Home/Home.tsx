@@ -3,43 +3,23 @@ import { LoadingOutlined } from '@ant-design/icons';
 
 import Cards from './components/Cards/Cards';
 
-import { IFilm } from '../../types/schema';
-
 import styles from './styles/Home.module.css';
-
-// interface Card {
-//   id: number;
-//   title: string;
-//   channel_name: string;
-//   image: string;
-//   channel_avatar: string;
-//   dateNow: string;
-//   createAt: string;
-//   view: string;
-//   videoTime: string;
-// }
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
 
 interface Props {
-  films: IFilm[];
   search: string;
-  error: string;
-  errorState: boolean;
-  loading: boolean;
 }
 
-const Home = ({
-  films,
-  search,
-  loading,
-  error,
-  errorState,
-}: Props): React.JSX.Element => {
+function Home({ search }: Props): React.JSX.Element {
+  const state = useSelector((state: RootState) => state);
+
   return (
     <Layout.Content className={styles.content}>
-      <Cards films={films} search={search} />
-      {errorState && (
+      <Cards search={search} />
+      {state.film.errorState && (
         <Alert
-          message={error}
+          message={state.film.error}
           type='error'
           style={{
             width: '23%',
@@ -52,7 +32,7 @@ const Home = ({
         />
       )}
 
-      {loading && (
+      {state.film.loading && (
         <Spin
           indicator={<LoadingOutlined style={{ fontSize: 80 }} spin />}
           style={{
@@ -65,6 +45,6 @@ const Home = ({
       )}
     </Layout.Content>
   );
-};
+}
 
 export default Home;

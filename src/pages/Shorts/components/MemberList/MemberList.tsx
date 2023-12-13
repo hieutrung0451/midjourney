@@ -4,9 +4,9 @@ import { AntDesignOutlined, UserOutlined } from '@ant-design/icons';
 
 import styles from './styles/MemberList.module.css';
 
-const MemberList = () => {
+function MemberList() {
   return (
-    <Flex justify='space-around' gap={40} className={styles.memberList}>
+    <Flex justify="space-around" gap={40} className={styles.memberList}>
       <div className={styles.memberList__text}>
         <h4>Our members</h4>
         <p>Thank you channel members</p>
@@ -46,6 +46,6 @@ const MemberList = () => {
       </div>
     </Flex>
   );
-};
+}
 
 export default MemberList;

@@ -12,9 +12,7 @@ export const api = axios.create({
 });
 
 axios.interceptors.response.use(
-  (response: AxiosResponse) => {  
-    return response.data;
-  },
+  (response: AxiosResponse) => response.data,
   (error) => {
     switch (error.response.status) {
       case badRequest:

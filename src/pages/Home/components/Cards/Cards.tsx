@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { Row, Col } from 'antd';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchFilms } from '../../../../redux/slice/filmsSlice';
 import { ThunkDispatch } from '@reduxjs/toolkit';
+import { fetchFilms } from '../../../../redux/slice/filmsSlice';
 import { RootState } from '../../../../redux/store';
 
 import Card from './Card/CardItem';
@@ -26,27 +26,26 @@ import styles from './Card/CardItem.module.css';
 // }
 
 interface Props {
-  films: IFilm[];
   search: string;
 }
 
-const Cards = ({ films, search }: Props): React.JSX.Element => {
+function Cards({ search }: Props): React.JSX.Element {
   const state = useSelector((state: RootState) => state);
   const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
 
   useEffect(() => {
     dispatch(fetchFilms());
-  }, [dispatch]);
+  }, []);
 
   const bySearch = (card: IFilm, search: string) => {
     if (search !== '') {
       return card.title.toLowerCase().includes(search.toLowerCase());
-    } else return card;
+    }
+    return card;
   };
 
-  const filteredList = (cards: IFilm[], search: string) => {
-    return state.film.films.filter((card) => bySearch(card, search));
-  };
+  const filteredList = (cards: IFilm[], search: string) =>
+    state.film.films.filter((card) => bySearch(card, search));
 
   return (
     <Row
@@ -54,7 +53,7 @@ const Cards = ({ films, search }: Props): React.JSX.Element => {
       // style={{ padding: '48px 12px 40px 65px' }}
       className={styles.cards}
     >
-      {filteredList(films, search).map((film) => (
+      {filteredList(state.film.films, search).map((film) => (
         <Col xs={24} xl={8} md={11} className={styles.card__item}>
           <Card
             key={film.episode_id}
@@ -72,6 +71,6 @@ const Cards = ({ films, search }: Props): React.JSX.Element => {
       ))}
     </Row>
   );
-};
+}
 
 export default Cards;
