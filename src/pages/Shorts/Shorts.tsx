@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
-import { Layout, Col, Row, Avatar, Button } from 'antd';
-import { CaretRightOutlined, BellOutlined } from '@ant-design/icons';
+import { Layout, Col, Row, Avatar, Button, Alert, Spin } from 'antd';
+import {
+  CaretRightOutlined,
+  BellOutlined,
+  LoadingOutlined,
+} from '@ant-design/icons';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { ThunkDispatch } from '@reduxjs/toolkit';
@@ -78,6 +82,30 @@ function Shorts(): React.JSX.Element {
                 padding: '0 60px',
               }}
             >
+              {state.film.errorState && (
+                <Alert
+                  message={state.film.error}
+                  type='error'
+                  style={{
+                    position: 'absolute',
+                    right: '32px',
+                    top: '164px',
+                  }}
+                  showIcon
+                  closable
+                />
+              )}
+              {state.film.loading && (
+                <Spin
+                  indicator={<LoadingOutlined style={{ fontSize: 80 }} spin />}
+                  style={{
+                    height: '50vh',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}
+                />
+              )}
               {state.film.films.slice(0, 5).map((film) => (
                 <ChannelVideo
                   key={film.episode_id}

@@ -13,7 +13,7 @@ interface filmListInterface {
 const initialState: filmListInterface = {
   films: [],
   film: null,
-  loading: false,
+  loading: true,
   errorState: false,
   error: '',
 };

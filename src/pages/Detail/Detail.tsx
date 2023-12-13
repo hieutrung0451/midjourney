@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 import { Layout, Flex, Spin, Alert } from 'antd';
-import { LoadingOutlined } from '@ant-design/icons';
+
 import { useParams } from 'react-router-dom';
 import { ThunkDispatch } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
@@ -24,7 +24,6 @@ function Detail(): React.JSX.Element {
   }, []);
 
   useEffect(() => {
-    console.log(state.film);
     id && dispatch(fetchFilm(+id));
   }, []);
 
@@ -33,30 +32,7 @@ function Detail(): React.JSX.Element {
       <Layout.Content className={styles.content}>
         <Flex className={styles.detailFlex}>
           <DetailVideo />
-          {state.film.errorState && (
-            <Alert
-              message={state.film.error}
-              type='error'
-              style={{
-                position: 'absolute',
-                right: '32px',
-                top: '164px',
-              }}
-              showIcon
-              closable
-            />
-          )}
-          {state.film.loading && (
-            <Spin
-              indicator={<LoadingOutlined style={{ fontSize: 80 }} spin />}
-              style={{
-                height: '50vh',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-            />
-          )}
+
           <DetailList />
         </Flex>
       </Layout.Content>

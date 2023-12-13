@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { Card } from 'antd';
+import { Card, Alert, Spin } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
-
 import { useDispatch, useSelector } from 'react-redux';
 import { ThunkDispatch } from '@reduxjs/toolkit';
 import { fetchFilms } from '../../../../redux/slice/filmsSlice';
@@ -32,6 +32,30 @@ function DetailList(): React.JSX.Element {
 
   return (
     <div className={styles.detailList}>
+      {state.film.errorState && (
+        <Alert
+          message={state.film.error}
+          type='error'
+          style={{
+            position: 'absolute',
+            right: '32px',
+            top: '164px',
+          }}
+          showIcon
+          closable
+        />
+      )}
+      {state.film.loading && (
+        <Spin
+          indicator={<LoadingOutlined style={{ fontSize: 80 }} spin />}
+          style={{
+            height: '50vh',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        />
+      )}
       {state.film.films.map((film) => (
         <Card
           className={styles.cardItem}

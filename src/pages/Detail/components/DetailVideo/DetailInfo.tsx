@@ -33,7 +33,7 @@ interface Props {
   film?: IFilm;
 }
 
-const DetailInfo = ({ film }: Props) => {
+const DetailInfo = () => {
   const navigate = useNavigate();
   const state = useSelector((state: RootState) => state);
 
