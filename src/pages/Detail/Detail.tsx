@@ -30,9 +30,8 @@ function Detail(): React.JSX.Element {
   return (
     <Layout>
       <Layout.Content className={styles.content}>
-        <Flex className={styles.detailFlex}>
+        <Flex className={styles.detailFlex} style={{ marginBottom: '100px' }}>
           <DetailVideo />
-
           <DetailList />
         </Flex>
       </Layout.Content>

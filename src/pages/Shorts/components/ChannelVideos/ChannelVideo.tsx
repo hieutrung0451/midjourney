@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Card, Avatar, Flex } from 'antd';
+import { useState, useEffect } from 'react';
+import { Card, Flex } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
 import styles from './styles/ChannelVideo.module.css';
@@ -46,13 +46,13 @@ function ChannelVideo({
   return (
     <Card
       className={styles.channelVideo}
-      cover={(
+      cover={
         <img
-          src="https://lofigirl.com/wp-content/uploads/2022/10/Hush.png"
-          alt="this is video"
+          src='https://lofigirl.com/wp-content/uploads/2022/10/Hush.png'
+          alt='this is video'
           className={styles.image}
         />
-      )}
+      }
       hoverable
       onClick={() => navigate(`/detail/${id}`)}
     >
@@ -64,11 +64,7 @@ function ChannelVideo({
             <div>{channel_name}</div>
             <span>{view}</span>
             <span> - </span>
-            <span>
-              {monthBetween}
-              {' '}
-              month ago
-            </span>
+            <span>2 month ago</span>
           </div>
         </div>
       </Flex>

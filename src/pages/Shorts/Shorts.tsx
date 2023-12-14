@@ -41,7 +41,10 @@ function Shorts(): React.JSX.Element {
                 <Avatar
                   size='large'
                   icon={
-                    <img src='https://upload.wikimedia.org/wikipedia/vi/2/23/Lofi_girl_logo.jpg' />
+                    <img
+                      src='https://upload.wikimedia.org/wikipedia/vi/2/23/Lofi_girl_logo.jpg'
+                      alt='lofi girl'
+                    />
                   }
                 />
               </Col>
@@ -95,7 +98,7 @@ function Shorts(): React.JSX.Element {
                   closable
                 />
               )}
-              {state.film.loading && (
+              {state.film.loading ? (
                 <Spin
                   indicator={<LoadingOutlined style={{ fontSize: 80 }} spin />}
                   style={{
@@ -105,20 +108,23 @@ function Shorts(): React.JSX.Element {
                     alignItems: 'center',
                   }}
                 />
+              ) : (
+                state.film.films
+                  .slice(0, 5)
+                  .map((film) => (
+                    <ChannelVideo
+                      key={film.episode_id}
+                      id={film.episode_id}
+                      title={film.title}
+                      channel_name={film.director}
+                      createAt={film.created}
+                      dateNow={film.edited}
+                      view={film.title}
+                      image={film.title}
+                      videoTime={film.created}
+                    />
+                  ))
               )}
-              {state.film.films.slice(0, 5).map((film) => (
-                <ChannelVideo
-                  key={film.episode_id}
-                  id={film.episode_id}
-                  title={film.title}
-                  channel_name={film.director}
-                  createAt={film.created}
-                  dateNow={film.edited}
-                  view={film.title}
-                  image={film.title}
-                  videoTime={film.created}
-                />
-              ))}
             </Row>
           </Col>
         </Row>

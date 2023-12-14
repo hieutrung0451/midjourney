@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Layout, Alert } from 'antd';
+import { Layout } from 'antd';
 import {
   BrowserRouter as Router,
   Routes,

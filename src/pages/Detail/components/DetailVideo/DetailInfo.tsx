@@ -1,37 +1,11 @@
-import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Row, Col, Card, Button, Avatar, Radio } from 'antd';
-import {
-  BellOutlined,
-  LikeOutlined,
-  DislikeOutlined,
-  EllipsisOutlined,
-} from '@ant-design/icons';
+import { Row, Col, Button, Avatar } from 'antd';
+import { BellOutlined } from '@ant-design/icons';
 
-import { fetchFilm } from '../../../../redux/slice/filmsSlice';
-import { ThunkDispatch } from '@reduxjs/toolkit';
 import { RootState } from '../../../../redux/store';
-import { useDispatch, useSelector } from 'react-redux';
-
-import { IFilm } from '../../../../types/schema';
+import { useSelector } from 'react-redux';
 
 import styles from '../../styles/Detail.module.css';
-
-// interface Card {
-//   id?: number;
-//   title?: string;
-//   channel_name?: string;
-//   image?: string;
-//   channel_avatar?: string;
-//   dateNow: string;
-//   createAt: string;
-//   view?: string;
-//   videoTime?: string;
-// }
-
-interface Props {
-  film?: IFilm;
-}
 
 const DetailInfo = () => {
   const navigate = useNavigate();
@@ -75,26 +49,19 @@ const DetailInfo = () => {
           >
             Subscribed
           </Button>
-          {/* <Col>
-            <Radio.Group
-              options={options}
-              optionType='button'
-              style={{ marginTop: '6px' }}
-            />
-          </Col> */}
         </Col>
       </Row>
 
-      <Col>
+      <Col className={styles.detail} style={{ height: '300px' }}>
         <Row className={styles.desc}>
-          <div>{state?.film?.film?.title} views </div>
+          <div>120.000 views </div>
           <div className={styles.between}> - </div>
           <div>1 month</div>
         </Row>
 
-        <p className={styles.detail}>{state?.film?.film?.opening_crawl}</p>
+        <p>{state?.film?.film?.opening_crawl}</p>
+        <Row style={{ color: 'white', marginTop: '12px' }}>Show more</Row>
       </Col>
-      <Row>Show more</Row>
     </Row>
   );
 };

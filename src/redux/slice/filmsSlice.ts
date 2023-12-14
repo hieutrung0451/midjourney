@@ -13,7 +13,7 @@ interface filmListInterface {
 const initialState: filmListInterface = {
   films: [],
   film: null,
-  loading: true,
+  loading: false,
   errorState: false,
   error: '',
 };
@@ -47,7 +47,6 @@ const filmsSlice = createSlice({
     });
 
     builder.addCase(fetchFilm.fulfilled, (state, action) => {
-      state.loading = false;
       state.film = action.payload;
     });
   },

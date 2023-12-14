@@ -9,18 +9,6 @@ import { RootState } from '../../../../redux/store';
 
 import styles from '../../styles/Detail.module.css';
 
-// interface Card {
-//   id?: number;
-//   title?: string;
-//   channel_name?: string;
-//   image?: string;
-//   channel_avatar?: string;
-//   dateNow: string;
-//   createAt: string;
-//   view?: string;
-//   videoTime?: string;
-// }
-
 function DetailList(): React.JSX.Element {
   const navigate = useNavigate();
   const state = useSelector((state: RootState) => state);
@@ -45,7 +33,7 @@ function DetailList(): React.JSX.Element {
           closable
         />
       )}
-      {state.film.loading && (
+      {state.film.loading ? (
         <Spin
           indicator={<LoadingOutlined style={{ fontSize: 80 }} spin />}
           style={{
@@ -55,37 +43,38 @@ function DetailList(): React.JSX.Element {
             alignItems: 'center',
           }}
         />
-      )}
-      {state.film.films.map((film) => (
-        <Card
-          className={styles.cardItem}
-          cover={
-            <img
-              src='https://lofigirl.com/wp-content/uploads/2022/10/Hush.png'
-              alt={film.title}
-              style={{
-                width: '146px',
-                height: '108px',
-                borderRadius: '0',
-              }}
-            />
-          }
-          hoverable
-          onClick={() => navigate(`/detail/${film.episode_id}`)}
-        >
-          <div className={styles.cardInfo}>
-            <p>{film.title}</p>
-            <div className={styles.channelInfo}>
-              <p>{film.director}</p>
-              <div>
-                <span>14.000 views </span>
-                <span> - </span>
-                <span>1 month ago</span>
+      ) : (
+        state.film.films.map((film) => (
+          <Card
+            className={styles.cardItem}
+            cover={
+              <img
+                src='https://lofigirl.com/wp-content/uploads/2022/10/Hush.png'
+                alt={film.title}
+                style={{
+                  width: '146px',
+                  height: '108px',
+                  borderRadius: '0',
+                }}
+              />
+            }
+            hoverable
+            onClick={() => navigate(`/detail/${film.episode_id}`)}
+          >
+            <div className={styles.cardInfo}>
+              <p>{film.title}</p>
+              <div className={styles.channelInfo}>
+                <p>{film.director}</p>
+                <div>
+                  <span>14.000 views </span>
+                  <span> - </span>
+                  <span>1 month ago</span>
+                </div>
               </div>
             </div>
-          </div>
-        </Card>
-      ))}
+          </Card>
+        ))
+      )}
     </div>
   );
 }
